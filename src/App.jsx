@@ -1,8 +1,7 @@
-import Benefits from "./modules/home/pages/Benefits";
-
+import Navbar from "./common/layout/Navbar";
 
 export default function App() {
   return (
-    <Benefits />
+    <Navbar />
   )
 }
