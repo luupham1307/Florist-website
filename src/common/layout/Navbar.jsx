@@ -1,4 +1,4 @@
-import Container from "../container/Container";
+import Container from "../components/Container";
 
 export default function Navbar() {
     return (
