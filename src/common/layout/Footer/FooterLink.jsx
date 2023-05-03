@@ -2,7 +2,7 @@ import React from "react";
 
 export default function FooterLink({ linkItem }) {
   return (
-    <ul className="font-[Quicksand] sm:text-[15px] sm:leading-9">
+    <ul className="font-[Quicksand] text-[15px] leading-9">
       {linkItem.map((item) => {
         return (
           <li>
