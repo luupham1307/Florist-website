@@ -1,5 +1,5 @@
 import { Fragment } from "react"
-import Container from "../../../common/container/Container"
+import Container from "../../../common/components/Container"
 let arrBenefis = [
     {
         image: "https://zjuxinjcqrcvncurfkwx.supabase.co/storage/v1/object/public/Image/Icons/benefit-1.png",
