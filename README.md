@@ -24,14 +24,14 @@ Font-size:
 h1: 43px/60px
 h2: 42px/58px
 h3: 38px/52px
-h4: 24px/28px
+h4: 24px/28px 
 
     Body
         Font-family: "Quicksand", sans-serif;
         Color: #444444
         Font-size:
             text-sm: 15px / 36px
-            text-md: 16px / 27px
+            text-md: 16px / 27px  //p
             text-lg: 18px / 30px
             text-xl: 23px / 41px
 
