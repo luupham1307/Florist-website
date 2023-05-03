@@ -17,6 +17,18 @@ export default {
       xl: "1200px",
       // => @media (min-width: 1280px) { ... }
     },
+    fontSize: {
+      sm: ['15px', '36px'],
+      base: ['16px', '27px'],
+      lg: ['18px', '30px'],
+      xl: ['23px', '41px'],
+      h1: ['43px', '60px'],
+      h2: ['42px', '58px'],
+      h3: ['38px', '52px'],
+      h4: ['24px', '28px'],
+
+
+    }
   },
   plugins: [],
 };
