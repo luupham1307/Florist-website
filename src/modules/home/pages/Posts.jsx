@@ -4,33 +4,22 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 import supabase from "../../../config/supabase";
 
 export default function Posts() {
-  const blogImagesUrl = [
-    "https://zjuxinjcqrcvncurfkwx.supabase.co/storage/v1/object/public/Image/Blog/blog-1.jpg",
-    "https://zjuxinjcqrcvncurfkwx.supabase.co/storage/v1/object/public/Image/Blog/blog-2.jpg",
-    "https://zjuxinjcqrcvncurfkwx.supabase.co/storage/v1/object/public/Image/Blog/blog-3.jpg",
-  ];
-
-  const blogTypes = ["Trend new", "Tips & Idea", "DIY & Crafts"];
-  const blogTitles = [
-    "8 Romantic Gifts to Celebrate Your Wedding Anniversary",
-    "Red Rose - Flower of love of Greek Mythology",
-    "Beautiful Mandalas Made From Flowers by Kathy Klein",
-  ];
-
-  const blogDesciptions = [
-    "Flowers have a language all their own. In Victorian times, receiving a…",
-    "Flowers have a language all their own. In Victorian times, receiving a…",
-    "Flowers have a language all their own. In Victorian times, receiving a…",
-  ];
-
-  const queryClient = useQueryClient( );
-  const { data:blog, isLoading, error } = useQuery({
+  const queryClient = useQueryClient();
+  const {
+    isLoading,
+    data: blog,
+    error,
+  } = useQuery({
     queryKey: ["blog"],
-    queryFn: supabase.from("blog").select("type, title, description"),
+    queryFn: () =>
+      supabase
+        .from("Blog")
+        .select("created_at, type, title, thumbnail, description"),
     select: (res) => res.data,
   });
 
   if (isLoading) return <div>Loading...</div>;
+
   return (
     <div>
       <Container>
@@ -52,61 +41,22 @@ export default function Posts() {
               </button>
             </div>
           </div>
-
           {/* Blog item */}
-          <div>
-            {blog.map((blogItem,index) => (
-                 <div className="relative">
-                 <img 
-                   src={blogItem.thumbnail}
-                   alt={`blog-img-${index}`}
-                 />
+          <div className="flex">
+            {blog.map((blogItem, index) => {
+              if (index <= 2) {
+                return (
+                  <div className="">
+                    <img src={blogItem.thumbnail} alt={`blog-img-${index}`} />
 
-
-              
-                 <span className="absolute top-1/2">{blogItem.type}</span>
-                 <h4>{blogItem.title}</h4>
-                 <p>
-                  {blogItem.description}
-                 </p>
-                 <span>Day</span>
-               </div>
-            ))}
-           
-            {/* item 1 */}
-            {/* <div className="relative">
-              <img
-                src="https://zjuxinjcqrcvncurfkwx.supabase.co/storage/v1/object/public/Image/Blog/blog-1.jpg"
-                alt="blog-img-1"
-              />
-
-              <span>Trend new</span>
-              <h4>8 Romantic Gifts to Celebrate Your Wedding Anniversary</h4>
-              <p>
-                Flowers have a language all their own. In Victorian times,
-                receiving a…
-              </p>
-              <span></span>
-            </div> */}
-
-            {/* item 2 */}
-            {/* <div>
-              <div>
-                <img
-                  src="https://zjuxinjcqrcvncurfkwx.supabase.co/storage/v1/object/public/Image/Blog/blog-2.jpg"
-                  alt="blog-img-2"
-                />
-              </div>
-              <div>
-                <span>Tips & Idea</span>
-                <h4>8 Romantic Gifts to Celebrate Your Wedding Anniversary</h4>
-                <p>
-                  Flowers have a language all their own. In Victorian times,
-                  receiving a…
-                </p>
-                <span></span>
-              </div>
-            </div> */}
+                    <span className="">{blogItem.type}</span>
+                    <h4>{blogItem.title}</h4>
+                    <p>{blogItem.description}</p>
+                    <span>{blogItem.created_at}</span>
+                  </div>
+                );
+              }
+            })}
           </div>
         </div>
       </Container>
