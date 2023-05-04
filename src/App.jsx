@@ -6,15 +6,26 @@ import Instagram from "./common/layout/Instagram";
 import Posts from "./modules/home/pages/Posts";
 import CallToAction from "./modules/home/pages/CallToAction";
 
+import {
+  useQuery,
+  useMutation,
+  useQueryClient,
+  QueryClient,
+  QueryClientProvider,
+} from "@tanstack/react-query";
+const queryClient = new QueryClient();
+
 export default function App() {
   return (
-    <React.Fragment>
-      <Navbar />
-      <Benefits />
-      <CallToAction />
-      <Posts/>
-      <Instagram />
-      <Footer />
-    </React.Fragment>
+    <QueryClientProvider client={queryClient}>
+      <React.Fragment>
+        <Navbar />
+        <Benefits />
+        <CallToAction />
+        {/* <Posts /> */}
+        <Instagram />
+        <Footer />
+      </React.Fragment>
+    </QueryClientProvider>
   );
 }

@@ -1,5 +1,7 @@
 import React from "react";
 import Container from "../../../common/components/Container";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
+import supabase from "../../../config/supabase";
 
 export default function Posts() {
   const blogImagesUrl = [
@@ -20,6 +22,15 @@ export default function Posts() {
     "Flowers have a language all their own. In Victorian times, receiving a…",
     "Flowers have a language all their own. In Victorian times, receiving a…",
   ];
+
+  const queryClient = useQueryClient( );
+  const { data:blog, isLoading, error } = useQuery({
+    queryKey: ["blog"],
+    queryFn: supabase.from("blog").select("type, title, description"),
+    select: (res) => res.data,
+  });
+
+  if (isLoading) return <div>Loading...</div>;
   return (
     <div>
       <Container>
@@ -44,8 +55,26 @@ export default function Posts() {
 
           {/* Blog item */}
           <div>
+            {blog.map((blogItem,index) => (
+                 <div className="relative">
+                 <img 
+                   src={blogItem.thumbnail}
+                   alt={`blog-img-${index}`}
+                 />
+
+
+              
+                 <span className="absolute top-1/2">{blogItem.type}</span>
+                 <h4>{blogItem.title}</h4>
+                 <p>
+                  {blogItem.description}
+                 </p>
+                 <span>Day</span>
+               </div>
+            ))}
+           
             {/* item 1 */}
-            <div className="relative">
+            {/* <div className="relative">
               <img
                 src="https://zjuxinjcqrcvncurfkwx.supabase.co/storage/v1/object/public/Image/Blog/blog-1.jpg"
                 alt="blog-img-1"
@@ -58,10 +87,10 @@ export default function Posts() {
                 receiving a…
               </p>
               <span></span>
-            </div>
+            </div> */}
 
             {/* item 2 */}
-            <div>
+            {/* <div>
               <div>
                 <img
                   src="https://zjuxinjcqrcvncurfkwx.supabase.co/storage/v1/object/public/Image/Blog/blog-2.jpg"
@@ -77,7 +106,7 @@ export default function Posts() {
                 </p>
                 <span></span>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </Container>

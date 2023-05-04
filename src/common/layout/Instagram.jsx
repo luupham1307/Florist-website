@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Container from "../components/Container";
 import ContainerFuild from "../components/ContainerFuild";
 
@@ -10,6 +10,11 @@ export default function Instagram() {
     "https://zjuxinjcqrcvncurfkwx.supabase.co/storage/v1/object/public/Image/Instagram/insta-4.jpg",
     "https://zjuxinjcqrcvncurfkwx.supabase.co/storage/v1/object/public/Image/Instagram/insta-5.jpg",
   ];
+
+  const [openText, setOpenText] = useState(false)
+  function handleShowInsta() {
+    setOpenText(!openText)
+  }
 
 
   return (
@@ -24,9 +29,9 @@ export default function Instagram() {
                   key={index}
                   src={imgUrl}
                   alt={`instagram-${index}`}
-                  // onmouseover={handleShowInsta}
+                  onMouseOver={handleShowInsta}
                   />
-                <div  className="absolute top-1/2 -translate-y-1/2 w-full py-5 lg:px-[30px] lg:py-4 bg-[#ffffff] text-center transition ">
+                {openText && <div className="absolute top-1/2 -translate-y-1/2 w-full py-5 lg:px-[30px] lg:py-4 bg-[#ffffff] text-center transition ">
                   <i className="text-[#f45d96] text-[30px] fa-brands fa-instagram"></i>
                   <h6>
                     Follow us
@@ -34,7 +39,7 @@ export default function Instagram() {
                       @florist
                     </a>
                   </h6>
-                </div>
+                </div>}
               </div>
             );
           })}
