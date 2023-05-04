@@ -3,9 +3,9 @@
     height: 100%;
   }
   
-  .banner-swiper {
-    height: 80vh;
-  }
+   .banner-swiper {
+    height: 600px;
+  } 
   
   .swiper-slide {
     text-align: center;
