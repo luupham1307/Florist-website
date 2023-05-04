@@ -25,7 +25,7 @@ let arrBenefis = [
 export default function Benefits() {
     return (
         <Container>
-            <div>
+            <div className="py-[60px]">
                 <div>
                     <div className=" flex "> {arrBenefis.map((item, i) => (
                         <Fragment key={i}>

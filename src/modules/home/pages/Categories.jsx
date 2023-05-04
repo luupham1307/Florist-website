@@ -23,7 +23,7 @@ export default function Categories() {
         <Container>
             {isLoading && "Đang tải dữ liệu"}
             {error && <div style={{ color: 'red' }}>Có lỗi khi tải dữ liệu!!!</div>}
-            <div>
+            <div className="pb-[100px]">
                 <div className="flex gap-7 ">
                     {categories.map((items, index) => (
                         <div key={index} className="relative">
