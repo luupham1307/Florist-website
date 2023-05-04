@@ -27,10 +27,10 @@ export default function Benefits() {
         <Container>
             <div>
                 <div>
-                    <div className=" flex  "> {arrBenefis.map((item, i) => (
+                    <div className=" flex "> {arrBenefis.map((item, i) => (
                         <Fragment key={i}>
-                            <div className=" pr-8  ">
-                                <img className="w-12" src={item.image} alt="icon1" />
+                            <div className=" ">
+                                <img className="max-w-[114%]" src={item.image} alt="icon1" />
                             </div>
                             <div className="flex-col">
                                 <h4 className="font-['Libre_Baskerville'] ">{item.heading}</h4>
