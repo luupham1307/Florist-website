@@ -7,13 +7,13 @@ export default function Navbar() {
             <nav className=" font-['Quicksand']">
                 <div className=" flex flex-wrap items-center justify-between py-8 ">
                     {/* logo */}
-                    <div className="flex items-center justify-between  text-[#f45d96]">
+                    <div className=" flex items-center justify-between  text-[#f45d96]  ">
                         <img src="https://zjuxinjcqrcvncurfkwx.supabase.co/storage/v1/object/public/Image/Logo/Florist%20logo.webp" className=" " alt="Logo" />
                     </div>
 
-
-                    <div className="items-center justify-between hidden w-full md:flex md:w-auto ">
-                        <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 md:flex-row md:space-x-8 md:mt-0 gap-12 text-base uppercase ">
+                    {/* home... */}
+                    <div className="items-center justify-between hidden lg:flex ">
+                        <ul className="flex gap-4 flex-col font-medium p-4 md:p-0 mt-4 md:flex-row md:space-x-8 md:mt-0  text-base uppercase ">
                             <li>
                                 <a href="#" className="block py-2 pl-3 pr-4 text-black md:bg-transparent md:text-[#f45d96] md:p-0 " aria-current="page">Home</a>
                             </li>
@@ -41,7 +41,7 @@ export default function Navbar() {
 
                     <div className="flex ">
                         {/* icon */}
-                        <div className="flex gap-12 text-[#f45d96]">
+                        <div className="hidden lg:flex lg:gap-12 text-[#f45d96] ">
                             <i className="fa-solid fa-magnifying-glass"></i>
                             <i className="fa-sharp fa-solid fa-heart"></i>
                             <i className="fa-sharp fa-solid fa-cart-shopping"></i>

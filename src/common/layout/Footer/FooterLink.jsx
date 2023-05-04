@@ -1,13 +1,16 @@
-import React from "react";
+import { Fragment } from "react";
+
 
 export default function FooterLink({ linkItem }) {
   return (
     <ul className="font-[Quicksand] text-[15px] leading-9">
-      {linkItem.map((item) => {
+      {linkItem.map((item, i) => {
         return (
-          <li>
-            <a href="">{item}</a>
-          </li>
+          <Fragment key={i}>
+            <li>
+              <a href="">{item}</a>
+            </li>
+          </Fragment>
         );
       })}
     </ul>
