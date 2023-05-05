@@ -46,7 +46,7 @@ export default function Posts() {
             {blog.map((blogItem, index) => {
               if (index <= 2) {
                 return (
-                  <div className="">
+                  <div key={index} className="">
                     <img src={blogItem.thumbnail} alt={`blog-img-${index}`} />
 
                     <span className="">{blogItem.type}</span>

@@ -16,7 +16,7 @@ export default function Instagram() {
       <ContainerFuild>
         <div className="grid grid-cols-1 gap-2 px-[15px] py-[10px] sm:grid-cols-2 lg:flex">
           {instagramImagesUrl.map((imgUrl, index) => {
-            return <InstagramItem imgUrl={imgUrl} index={index} />;
+            return <InstagramItem imgUrl={imgUrl} key={index} />;
           })}
         </div>
       </ContainerFuild>
