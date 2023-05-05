@@ -8,9 +8,9 @@ export default function InstagramItem({imgUrl, index}) {
     setOpenText(!openText);
   }
   return (
-    <div className="relative h-[372px] ">
+    <div className="relative h-[372px] basis-1/5 ">
       <img
-        className=" h-full object-cover bg-top "
+        className="w-full h-full object-cover bg-top "
         key={index}
         src={imgUrl}
         alt={`instagram-${index}`}
