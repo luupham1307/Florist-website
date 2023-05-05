@@ -37,10 +37,13 @@ export default function Testimonial() {
                   Businessman
                 </span>
                 {/* Button */}
-                <button className=" absolute top-1/2 left-0 -translate-x-[50%] -translate-y-[50%] bg-white rounded-full w-12 h-12">
+                <div>
+                  
+                </div>
+                <button className=" absolute top-1/2 left-0 -translate-x-[50%] -translate-y-[150%] bg-white rounded-full w-12 h-12">
                   <i className=" text-[28px] text-[#888888] fa fa-angle-left"></i>
                 </button>
-                <button className=" absolute top-1/2 right-0 translate-x-[50%] -translate-y-[50%] bg-white rounded-full w-12 h-12 ">
+                <button className=" absolute top-1/2 right-0 translate-x-[50%] -translate-y-[150%] bg-white rounded-full w-12 h-12 ">
                   <i className="text-[28px] text-[#888888] fa fa-angle-right"></i>
                 </button>
               </div>
