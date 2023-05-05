@@ -7,6 +7,7 @@ import Posts from "./modules/home/pages/Posts";
 import CallToAction from "./modules/home/pages/CallToAction";
 import Testimonial from "./common/components/Testimonial";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
 const queryClient = new QueryClient();
 
 export default function App() {
