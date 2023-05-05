@@ -9,7 +9,7 @@ export default function CallToAction() {
           {/* Image */}
 
           <img
-            className="max-w-full h-[502px] object-cover bg-center"
+            className="w-full h-[502px] object-cover bg-center"
             src="https://zjuxinjcqrcvncurfkwx.supabase.co/storage/v1/object/public/Image/Slides/call-bg.jpg"
             alt=""
           />

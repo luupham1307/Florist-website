@@ -5,7 +5,7 @@ export default function Testimonial() {
   return (
     <div>
       <ContainerFuild>
-        <div className="relative bg-[#f7f5fa] pt-[100px] pb-[75px]">
+        <div className="relative bg-[#f7f5fa] pt-[100px] pb-[75px] overflow-hidden">
           {/* Flower left top */}
           <img
             className="absolute top-0 left-0 translate-x-[-55%]"
