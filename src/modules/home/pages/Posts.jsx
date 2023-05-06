@@ -2,6 +2,8 @@ import React from "react";
 import Container from "../../../common/components/Container";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import supabase from "../../../config/supabase";
+import BlogCart from "../components/BlogItem";
+import BlogItem from "../components/BlogItem";
 
 export default function Posts() {
   const queryClient = useQueryClient();
@@ -12,9 +14,7 @@ export default function Posts() {
   } = useQuery({
     queryKey: ["blog"],
     queryFn: () =>
-      supabase
-        .from("Blog")
-        .select("created_at, type, title, thumbnail, description"),
+      supabase.from("Blog").select("type, title, thumbnail, description, day"),
     select: (res) => res.data,
   });
 
@@ -26,7 +26,7 @@ export default function Posts() {
         <div className="pt-[100px] pb-[50px]">
           <div className="md:flex md:justify-between">
             {/* Posts heading */}
-            <div className="pb-[45px]">
+            <div className="pb-[45px] md:pl-[15px]">
               <span className="font-[Quicksand] text-[#f45d96] text-base font-bold uppercase tracking-[4px] mb-2 ">
                 Latest posts
               </span>
@@ -42,18 +42,11 @@ export default function Posts() {
             </div>
           </div>
           {/* Blog item */}
-          <div className="flex">
+          <div className="md:flex md:flex-wrap">
             {blog.map((blogItem, index) => {
               if (index <= 2) {
                 return (
-                  <div key={index} className="">
-                    <img src={blogItem.thumbnail} alt={`blog-img-${index}`} />
-
-                    <span className="">{blogItem.type}</span>
-                    <h4>{blogItem.title}</h4>
-                    <p>{blogItem.description}</p>
-                    <span>{blogItem.created_at}</span>
-                  </div>
+                  <BlogItem key={index} blogItem={blogItem} index={index} />
                 );
               }
             })}
