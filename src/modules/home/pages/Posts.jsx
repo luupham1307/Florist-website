@@ -2,7 +2,6 @@ import React from "react";
 import Container from "../../../common/components/Container";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import supabase from "../../../config/supabase";
-import BlogCart from "../components/BlogItem";
 import BlogItem from "../components/BlogItem";
 
 export default function Posts() {
@@ -41,6 +40,7 @@ export default function Posts() {
               </button>
             </div>
           </div>
+
           {/* Blog item */}
           <div className="md:flex md:flex-wrap">
             {blog.map((blogItem, index) => {
