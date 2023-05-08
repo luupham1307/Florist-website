@@ -2,7 +2,7 @@ import React from "react";
 import Container from "../../../common/components/Container";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import supabase from "../../../config/supabase";
-import BlogItem from "../components/BlogItem";
+import BlogItem from "../../../common/components/BlogItem";
 
 export default function Posts() {
   const queryClient = useQueryClient();
