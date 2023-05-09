@@ -1,7 +1,23 @@
 import React from "react";
 import Container from "../../../common/components/Container";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
+import supabase from "../../../config/supabase";
+import ProductItem from "../../../common/components/ProductItem";
 
 export default function Arrival() {
+  const queryClient = useQueryClient();
+  const {
+    isLoading,
+    data: product,
+    error,
+  } = useQuery({
+    queryKey: ["product"],
+    queryFn: () =>
+      supabase.from("Product").select("id, name, price, thumbnail, note"),
+    select: (res) => res.data,
+  });
+
+  if (isLoading) return <div>Loading...</div>;
   return (
     <div>
       <Container>
@@ -43,7 +59,17 @@ export default function Arrival() {
         </div>
 
         {/* Arrival items */}
-        <div>{/*  */}</div>
+        <div>
+          {product.map((item) => (
+            <ProductItem
+              key={index}
+              name={item.name}
+              price={item.price}
+              thumbnail={item.thumbnail}
+              note={item.note}
+            />
+          ))}
+        </div>
       </Container>
     </div>
   );

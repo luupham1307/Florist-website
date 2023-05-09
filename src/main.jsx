@@ -32,7 +32,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Categories />
       <CallToAction />
       <Blog/>
-      <Arrival/>
+      {/* <Arrival/> */}
       <Posts />
       <Testimonial />
       <Instagram />
