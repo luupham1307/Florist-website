@@ -5,7 +5,7 @@ export default function Navbar() {
         // navbar
         <Container>
             <nav className=" font-['Quicksand']">
-                <div className=" flex flex-wrap items-center justify-between py-8 ">
+                <div className=" flex  items-center justify-between py-8 ">
                     {/* logo */}
                     <div className=" flex items-center justify-between  text-[#f45d96]  ">
                         <img src="https://zjuxinjcqrcvncurfkwx.supabase.co/storage/v1/object/public/Image/Logo/Florist%20logo.webp" className=" " alt="Logo" />
@@ -13,7 +13,7 @@ export default function Navbar() {
 
                     {/* home... */}
                     <div className="items-center justify-between hidden lg:flex ">
-                        <ul className="flex gap-4 flex-col font-medium p-4 md:p-0 mt-4 md:flex-row md:space-x-8 md:mt-0  text-base uppercase ">
+                        <ul className="flex flex-row gap-4 font-medium  xl:space-x-8   text-base uppercase ">
                             <li>
                                 <a href="#" className="block py-2 pl-3 pr-4 text-black md:bg-transparent md:text-[#f45d96] md:p-0 " aria-current="page">Home</a>
                             </li>
@@ -48,8 +48,8 @@ export default function Navbar() {
                         </div>
 
                         <div className="block min-[992px]:hidden">
-                            <button className="flex items-center px-3 py-2 border rounded text-black-500 border-black-500 hover:border-black">
-                                <svg className="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" /></svg>
+                            <button className="flex items-center p-2 border rounded text-black-500 border-black-500 hover:border-black">
+                                <svg className="fill-current h-5 w-5" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" /></svg>
                             </button>
                         </div>
 
