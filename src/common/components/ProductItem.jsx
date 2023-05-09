@@ -1,39 +1,47 @@
-import React from "react";
+import React, { useState } from "react";
 
-export default function ProductItem({ imgUrl, id, name, price, note }) {
+export default function ProductItem({ productItem }) {
   return (
-    <div className="w-full">
-      <div className="relative w-full font-[Quicksand]">
+    <div className="group w-full md:w-1/2 lg:w-1/3 xl:w-1/4 md:px-[15px]">
+      <div className="relative w-full font-[Quicksand] text-center">
         <img
           className="w-full h-[344px] object-cover object-center "
-          src={imgUrl}
-          alt={`Item-${id}`}
+          src={productItem.thumbnail}
+          alt={`Item-${productItem.id}`}
         />
-        <p className="inline-block absolute top-4 left-4 bg-[#111111] text-white text-[13px] font-bold uppercase px-2 py-[2px]">
-          {note}
-        </p>
+        <div>
+          {productItem.note ? (
+            <p className="inline-block absolute top-4 left-4 bg-[#111111] text-white text-[13px] font-bold uppercase px-2 py-[2px]">
+              {productItem.note}
+            </p>
+          ) : null}
+        </div>
 
         {/* Icon */}
-        <ul className="absolute bottom-7 left-0 text-center">
-          <li className="inline-block mr-[10px] w-[40px] h-[40px] bg-white text-[18px] leading-10 rounded-full">
-            <i class="fa-solid fa-magnifying-glass fa-rotate-90"></i>
+        <ul className="hidden absolute group-hover:flex  bottom-7 left-1/2 translate-x-[-50%] text-center">
+          <li className="hover:rotate-[360deg] hover:shadow-[#ECF2E6] hover:shadow-[0px_3px_6px] hover:text-white hover:bg-[#f45d96] transition-all mr-[10px] w-[40px] h-[40px] bg-white text-[18px] leading-10 rounded-full">
+            <i className=" fa-solid fa-magnifying-glass fa-rotate-90"></i>
           </li>
-          <li className="inline-block mr-[10px]  w-[40px] h-[40px] bg-white text-[18px] leading-10 rounded-full">
-            <i class="fa-solid fa-bag-shopping"></i>
+          <li className="hover:rotate-[360deg] hover:shadow-[#ECF2E6] hover:shadow-[0px_3px_6px] hover:text-white hover:bg-[#f45d96] transition-all mr-[10px]  w-[40px] h-[40px] bg-white text-[18px] leading-10 rounded-full">
+            <i className=" fa-solid fa-bag-shopping"></i>
           </li>
-          <li className="inline-block mr-[10px]  w-[40px] h-[40px] bg-white text-[18px] leading-10 rounded-full">
-            <i class="fa-regular fa-heart"></i>
+          <li className="hover:rotate-[360deg] hover:shadow-[#ECF2E6] hover:shadow-[0px_3px_6px] hover:text-white hover:bg-[#f45d96] transition-all mr-[10px]  w-[40px] h-[40px] bg-white text-[18px] leading-10 rounded-full">
+            <i className=" fa-regular fa-heart"></i>
           </li>
         </ul>
       </div>
-      <div className="text-center text-[#111111]">
-        <h5 className="font-[Libre Baskerville] text-[18px] font-normal pt-6 mb-2 ">
-          {name}
+      <div className="text-center text-[#111111] mb-10  md:mb-[50px]">
+        <h5 className="font-[Libre Baskerville] text-lg font-normal capitalize pt-6 mb-2 ">
+          {productItem.name}
         </h5>
-        <p className="font-[Quicksand] text-base font-bold ">{price}</p>
+
+        <p className="group-hover:hidden font-[Quicksand] text-base font-bold ">
+          $ {productItem.price}
+        </p>
+
         <a
           href=""
-          className="font-[Quicksand] text-[14px] text-[#f45d96] font-bold uppercase "
+          className="hidden group-hover:block font-[Quicksand] text-[14px] text-[#f45d96] font-bold uppercase "
         >
           Add to cart
         </a>
