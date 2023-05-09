@@ -16,7 +16,7 @@ export default function CallToAction() {
           {/* Text */}
           <div className=" h-full px-15px mx-auto ">
             <div className="absolute flex flex-wrap  top-0 py-24  mx-[15px]">
-              <div className="px-[15px] basis-1/2">
+              <div className="px-[15px] lg:basis-1/2">
                 <span className="font-[Quicksand] mb-5 text-white text-left text-base font-bold tracking-[4px] uppercase ">
                   Custom Flower
                 </span>
