@@ -20,7 +20,7 @@ export default function CallToAction() {
                 <span className="font-[Quicksand] mb-5 text-white text-left text-base font-bold tracking-[4px] uppercase ">
                   Custom Flower
                 </span>
-                <h2 className="font-[Hello Santtiny] text-[42px] text-[#ffffff] mb-[42px] ">
+                <h2 className="font-['Herr_Von_Muellerhoff'] text-[42px] text-[#ffffff] mb-[42px] ">
                   Let out flowers make your party more perfect
                 </h2>
                 <button className="font-[Quicksand] bg-[#f45d96] text-[#ffffff] text-[15px] tracking-[2px] font-bold px-[30px] py-[14px] uppercase rounded-full ">
