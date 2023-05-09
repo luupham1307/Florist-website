@@ -17,6 +17,8 @@ import Categories from "./modules/home/pages/Categories";
 import Testimonial from "./common/components/Testimonial";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Slide from "./modules/home/pages/Slide";
+import Blog from "./modules/blog/pages/Blog";
+import Arrival from "./modules/home/pages/Arrival";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +31,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Benefits />
       <Categories />
       <CallToAction />
+      <Blog/>
+      <Arrival/>
       <Posts />
       <Testimonial />
       <Instagram />
