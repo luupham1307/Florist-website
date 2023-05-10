@@ -19,6 +19,7 @@ import Slide from "./modules/home/pages/Slide";
 import Blog from "./modules/blog/pages/Blog";
 import Arrival from "./modules/home/pages/Arrival";
 import ShopListing from "./modules/shop/pages/ShopListing";
+import About from "./common/components/About";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +30,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Slide />
       <Benefits />
       <Categories />
+      <About />
       <CallToAction />
       {/* <Blog />  trang BLOG */}
       {/* <ShopListing/> trang SHOP */}
