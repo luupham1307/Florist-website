@@ -19,6 +19,7 @@ import Slide from "./modules/home/pages/Slide";
 import Blog from "./modules/blog/pages/Blog";
 import Arrival from "./modules/home/pages/Arrival";
 import ShopListing from "./modules/shop/pages/ShopListing";
+import Slice from "./common/layout/Slice";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +29,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Navbar />
       <Slide />
       <Benefits />
+      {/* <Slice/> */}
       <Categories />
       <CallToAction />
       {/* <Blog />  trang BLOG */}
