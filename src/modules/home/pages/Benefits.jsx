@@ -1,4 +1,4 @@
-import { Fragment } from "react"
+
 import Container from "../../../common/components/Container"
 let arrBenefis = [
     {
@@ -22,25 +22,24 @@ let arrBenefis = [
         description: "Most people are unaware of the less common flower"
     }
 ]
+
 export default function Benefits() {
     return (
         <Container>
-            <div className="py-[60px]">
-                <div>
-                    <div className=" flex "> {arrBenefis.map((item, i) => (
-                        <Fragment key={i}>
-                            <div className=" ">
-                                <img className="max-w-[114%]" src={item.image} alt="icon1" />
-                            </div>
-                            <div className="flex-col">
-                                <h4 className="font-['Libre_Baskerville'] ">{item.heading}</h4>
-                                <p className="font-['Quicksand'] text-base">{item.description}</p>
-                            </div>
-                        </Fragment>
-                    ))}
+            <div className="py-[60px] flex flex-wrap  ">
+                {arrBenefis.map((item, i) => (
 
+                    <div key={i} className=" flex md:basis-1/2 xl:basis-1/4  gap-8 mb-7 pr-3.5 ">
+                        <div className=" ">
+                            <img className="max-w-[200px]" src={item.image} alt="icon1" />
+                        </div>
+                        <div className=" ">
+                            <h4 className="font-['Libre_Baskerville'] mb-2.5 text-h4">{item.heading}</h4>
+                            <p className="font-['Quicksand'] text-base ">{item.description}</p>
+                        </div>
                     </div>
-                </div>
+
+                ))}
             </div>
         </Container>
 

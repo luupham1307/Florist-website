@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react"
 import Container from "../../../common/components/Container"
 import axios from "axios";
@@ -23,10 +22,10 @@ export default function Categories() {
         <Container>
             {isLoading && "Đang tải dữ liệu"}
             {error && <div style={{ color: 'red' }}>Có lỗi khi tải dữ liệu!!!</div>}
-            <div className="pb-[100px]">
-                <div className="flex gap-7 ">
+            <div className="pb-[100px] ">
+                <div className=" gap-7 flex flex flex-wrap">
                     {categories.map((items, index) => (
-                        <div key={index} className="relative">
+                        <div key={index} className="relative flex md:basis-1/2 xl:basis-1/4  gap-8 mb-7 pr-3.5">
                             <img className="" src={items.imgUrl} alt="Categories1" />
                             <div className="absolute  bg-white  bottom-3 text-center w-[90%] left-[50%] translate-x-[-50%] py-4 ">
                                 <h4 className="text-h4 font-['Libre_Baskerville'] text-center">{items.title}</h4>
