@@ -1,11 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import Container from "../../../common/components/Container";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
+import ProductItem from "../../../common/components/ProductItem";
+import supabase from "../../../config/supabase";
 
 export default function Arrival() {
+  const queryClient = useQueryClient();
+  const {
+    isLoading,
+    data: product,
+    error,
+  } = useQuery({
+    queryKey: ["product"],
+    queryFn: () => supabase.from("Product").select(),
+    select: (res) => res.data,
+  });
+
+  if (isLoading) return <div>Loading...</div>;
+
   return (
     <div>
+      {/* Arrival text */}
       <Container>
-        {/* Arrival text */}
         <div className="text-center">
           {/* Heading */}
           <div>
@@ -19,32 +35,48 @@ export default function Arrival() {
 
           {/* Filter nav */}
           <div className="mb-10 text-center ">
-            <ul className="flex flex-wrap font-[Quicksand] text-base text-[#111111] font-normal ">
-              <li className="px-[10] py-[2px] mr-[10px] mb-[10px] border-solid border-transparent border-[2px] cursor-pointer ">
+            <ul className="flex justify-center flex-wrap font-[Quicksand] text-base text-[#111111] font-normal text-center">
+              <li className="w-fit items-center inline-block px-[10px] py-[2px] mr-[10px] mb-[10px] md:mb-0 border-solid border-transparent border-[2px] cursor-pointer">
                 All
               </li>
-              <li className="px-[10] py-[2px] mr-[10px] mb-[10px] cursor-pointer ">
+              <li className="w-fit items-center inline-block px-[10px] py-[2px] mr-[10px] mb-[10px] md:mb-0 border-solid border-transparent border-[2px]  cursor-pointer">
                 Bouquet
               </li>
-              <li className="px-[10] py-[2px] mr-[10px] mb-[10px] cursor-pointer ">
+              <li className="w-fit items-center inline-block px-[10px] py-[2px] mr-[10px] mb-[10px] md:mb-0 border-solid border-transparent border-[2px]  cursor-pointer">
                 Flower box
               </li>
-              <li className="px-[10] py-[2px] mr-[10px] mb-[10px] cursor-pointer ">
+              <li className="w-fit items-center inline-block px-[10px] py-[2px] mr-[10px] mb-[10px] md:mb-0 border-solid border-transparent border-[2px]  cursor-pointer">
                 Flower sheft
               </li>
-              <li className="px-[10] py-[2px] mr-[10px] mb-[10px] cursor-pointer ">
+              <li className="w-fit items-center inline-block px-[10px] py-[2px] mr-[10px] mb-[10px] md:mb-0 border-solid border-transparent border-[2px]  cursor-pointer">
                 Basket of flower
               </li>
-              <li className="px-[10] py-[2px] mr-[10px] mb-[10px] cursor-pointer ">
+              <li className="w-fit items-center inline-block px-[10px] py-[2px] mr-[10px] mb-[10px] md:mb-0 border-solid border-transparent border-[2px]  cursor-pointer">
                 Gift combos
               </li>
             </ul>
           </div>
         </div>
-
-        {/* Arrival items */}
-        <div>{/*  */}</div>
       </Container>
+
+      {/* Arrival items */}
+      <div className="w-full px-[15px] md:px-0 mx-auto">
+        <div className="flex flex-wrap mx-[18px]">
+          {product.map((productItem, index) => (
+            <ProductItem key={index} productItem={productItem} index={index} />
+          ))}
+        </div>
+      </div>
+
+      {/* Button view all */}
+      <div className="text-center">
+        <a
+          href=""
+          className="inline-block font-[Quicksand] text-sm text-[#111111] font-bold tracking-[2px] uppercase pb-[2px] mb-[2px] border-solid border-b-[2px] border-[#111111]"
+        >
+          View all products
+        </a>
+      </div>
     </div>
   );
 }
