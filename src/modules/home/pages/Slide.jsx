@@ -19,10 +19,10 @@ export default function Slide() {
                 <Swiper
                     spaceBetween={30}
                     centeredSlides={true}
-                    // autoplay={{
-                    //     delay: 2500,
-                    //     disableOnInteraction: false,
-                    // }}
+                    autoplay={{
+                        delay: 2500,
+                        disableOnInteraction: false,
+                    }}
                     pagination={{
                         clickable: true,
                     }}
@@ -36,24 +36,25 @@ export default function Slide() {
                             <img className="w-full h-full object-cover bg-left" src={item} alt="" />
 
                             {/* text */}
-                            <div className="absolute max-w-[1410px] h-full  mx-auto  flex flex-col justify-center flex-wrap text-left">
-                                <Container>
-                                    <div className="   py-24  ">
-                                        <div className="px-[15px] basis-1/2">
-                                            <span className="font-[Quicksand] pb-5 text-black text-left text-base font-bold tracking-[4px] uppercase ">
-                                                Fresh Flower & Gift Shop
-                                            </span>
-                                            <h2 className="font-[Hello Santtiny] text-[42px] text-black mb-[28px] ">
-                                                Making beautiful flowers a part of your life.
-                                            </h2>
-                                            <button className="font-[Quicksand] bg-[#f45d96] text-[#ffffff] text-[15px] tracking-[2px] font-bold px-[30px] py-[14px] uppercase rounded-full ">
-                                                Shop now
-                                            </button>
-
-                                        </div>
+                            <div className="absolute w-full sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1410px] mx-auto px-[15px]  ">
+                                <div className=" text-left  py-24 lg:flex lg:flex-row ">
+                                    <div className="px-[15px] basis-1/2">
+                                        <span className=" block font-[Quicksand] pb-3 text-black text-left text-base font-bold tracking-[4px] uppercase ">
+                                            Fresh Flower & Gift Shop
+                                        </span>
+                                        <h2 className=" text-[42px] text-black mb-[28px] ">
+                                            Making beautiful flowers a part of your life.
+                                        </h2>
+                                        <button className="font-[Quicksand] bg-[#f45d96] text-[#ffffff] text-[15px] tracking-[2px] font-bold px-[30px] py-[14px] uppercase rounded-full ">
+                                            Shop now
+                                        </button>
                                     </div>
-                                </Container>
+                                </div>
+
+
+
                             </div>
+
                         </SwiperSlide>
                     ))}
 

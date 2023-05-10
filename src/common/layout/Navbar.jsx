@@ -7,6 +7,7 @@ export default function Navbar() {
             <nav className=" font-['Quicksand']">
                 <div className=" flex  items-center justify-between py-8 ">
                     {/* logo */}
+
                     <div className=" flex items-center justify-between  text-[#f45d96]  ">
                         <img src="https://zjuxinjcqrcvncurfkwx.supabase.co/storage/v1/object/public/Image/Logo/Florist%20logo.webp" className=" " alt="Logo" />
                     </div>
