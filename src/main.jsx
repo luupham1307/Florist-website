@@ -21,6 +21,7 @@ import Arrival from "./modules/home/pages/Arrival";
 import ShopListing from "./modules/shop/pages/ShopListing";
 import Slice from "./common/layout/Slice";
 import Services from "./modules/services/Services";
+import About from "./common/components/About";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +33,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Benefits />
       {/* <Slice/> */}
       <Categories />
+      <About />
       <CallToAction />
       {/* <Blog />  trang BLOG */}
       {/* <ShopListing/> trang SHOP */}

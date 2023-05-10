@@ -23,7 +23,7 @@ export default function Categories() {
             {isLoading && "Đang tải dữ liệu"}
             {error && <div style={{ color: 'red' }}>Có lỗi khi tải dữ liệu!!!</div>}
             <div className="pb-[100px] ">
-                <div className=" gap-7 flex flex flex-wrap">
+                <div className=" gap-7  flex flex-wrap">
                     {categories.map((items, index) => (
                         <div key={index} className="relative flex md:basis-1/2 xl:basis-1/4  gap-8 mb-7 pr-3.5">
                             <img className="" src={items.imgUrl} alt="Categories1" />
