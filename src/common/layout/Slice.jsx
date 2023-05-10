@@ -1,7 +1,7 @@
 import React from "react";
 import ContainerFuild from "../components/ContainerFuild";
 
-export default function Slice() {
+export default function Slice({pageHeader, pageName}) {
   return (
     <div>
       <ContainerFuild>
@@ -16,7 +16,7 @@ export default function Slice() {
           {/* Text */}
           <div className="absolute top-1/2 left-1/2 -translate-x-[50%] -translate-y-[50%] text-center w-full px-[15px]  py-[60px]">
             <h2 className="font-[Libre Baskerville] text-[50px] font-normal leading-5 text-[#111111] mb-5 w-full ">
-              About us
+              {pageHeader}
             </h2>
             <div className="font-[Quicksand] uppercase  font-base w-full">
               <a
@@ -26,7 +26,7 @@ export default function Slice() {
                 Home
               </a>
               <a href="" className="">
-                About
+               {pageName}
               </a>
             </div>
           </div>
