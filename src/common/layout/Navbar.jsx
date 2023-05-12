@@ -43,9 +43,17 @@ export default function Navbar() {
                     <div className="flex ">
                         {/* icon */}
                         <div className="hidden lg:flex lg:gap-12 text-[#f45d96] ">
-                            <i className="fa-solid fa-magnifying-glass"></i>
-                            <i className="fa-sharp fa-solid fa-heart"></i>
-                            <i className="fa-sharp fa-solid fa-cart-shopping"></i>
+                            <a href="">
+                                <i className="fa-solid fa-magnifying-glass"></i>
+                            </a>
+
+                            <a href="">
+                                <i className="fa-sharp fa-solid fa-heart"></i>
+                            </a>
+
+                            <a href="">
+                                <i className="fa-sharp fa-solid fa-cart-shopping"></i>
+                            </a>
                         </div>
 
                         <div className="block min-[992px]:hidden">
@@ -58,10 +66,6 @@ export default function Navbar() {
 
                     </div>
                 </div>
-
-
-
-
             </nav>
         </Container>
 

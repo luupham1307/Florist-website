@@ -22,6 +22,9 @@ import ShopListing from "./modules/shop/pages/ShopListing";
 import Slice from "./common/layout/Slice";
 import Services from "./modules/services/Services";
 import About from "./common/components/About";
+import MyTeam from "./modules/about/pages/MyTeam";
+import Out_Services from "./modules/about/pages/Services";
+
 
 const queryClient = new QueryClient();
 
@@ -34,10 +37,13 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       {/* <Slice/> */}
       <Categories />
       <About />
+      <MyTeam />
+      <Out_Services />
+
       <CallToAction />
       {/* <Blog />  trang BLOG */}
       {/* <ShopListing/> trang SHOP */}
-      <Services/>
+      <Services />
       <Arrival />
       <Posts />
       <Testimonial />

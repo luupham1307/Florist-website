@@ -1,4 +1,3 @@
-
 import Container from "./Container";
 
 
@@ -28,6 +27,7 @@ export default function About() {
                             <a href="https://zjuxinjcqrcvncurfkwx.supabase.co/storage/v1/object/public/Image/video/Download.mp4">
                                 <i className="fa-solid fa-caret-right"></i>
                             </a>
+
                         </div>
 
                     </div>
