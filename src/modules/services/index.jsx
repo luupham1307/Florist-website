@@ -1,6 +1,5 @@
 import React from 'react'
 import Slice from '../../common/components/Slice'
-import Quote from './Quote'
 import Services from './Services'
 
 
