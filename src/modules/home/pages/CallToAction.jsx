@@ -13,7 +13,7 @@ export default function CallToAction() {
             alt=""
           />
           {/* Text */}
-          <div className=" max-w-[1170px] h-full px-15px mx-auto ">
+          <div className=" max-w-[1170px] h-full mx-auto ">
             <div className="absolute flex flex-wrap  top-0 py-24  mx-[15px]">
               <div className="px-[15px] lg:basis-1/2">
                 <span className="font-[Quicksand] mb-5 text-white text-left text-base font-bold tracking-[4px] uppercase ">
@@ -22,10 +22,10 @@ export default function CallToAction() {
                 <h2 className="text-[42px] text-[#ffffff] mb-[42px] ">
                   Let out flowers make your party more perfect
                 </h2>
-                <button className="font-[Quicksand] bg-[#f45d96] text-[#ffffff] text-[15px] tracking-[2px] font-bold px-[30px] py-[14px] uppercase rounded-full ">
+                <button className="font-[Quicksand] bg-[#f45d96] text-[#ffffff] text-sm leading-5 tracking-[2px] font-bold px-[30px] py-[14px] uppercase rounded-full ">
                   Order now
                 </button>
-                <button className="font-[Quicksand] bg-[#ffffff] text-[#f45d96]  text-[15px] tracking-[2px] font-bold px-[30px] py-[14px] ml-4 uppercase rounded-full ">
+                <button className="font-[Quicksand] bg-[#ffffff] text-[#f45d96] text-sm leading-5 tracking-[2px] font-bold px-[30px] py-[14px] ml-4 uppercase rounded-full ">
                   Contact Us
                 </button>
               </div>
