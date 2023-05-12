@@ -1,4 +1,3 @@
-import React from "react";
 import Container from "../../../common/components/Container";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import supabase from "../../../config/supabase";
@@ -48,6 +47,7 @@ export default function Posts() {
                 return (
                   <BlogItem key={index} blogItem={blogItem} index={index} />
                 );
+
               }
             })}
           </div>
