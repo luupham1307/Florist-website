@@ -1,5 +1,5 @@
 import React from "react";
-import SendButton from "../../common/components/SendButton";
+import SendButton from "../../../common/components/SendButton";
 
 export default function Quote() {
   return (

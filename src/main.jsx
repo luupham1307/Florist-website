@@ -18,7 +18,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Slide from "./modules/home/pages/Slide";
 import Blog from "./modules/blog/pages/Blog";
 import Arrival from "./modules/home/pages/Arrival";
-import ShopListing from "./modules/shop/pages/ShopListing";
+import ShopListing from "./modules/shop/pages/Shop";
 import Slice from "./common/layout/Slice";
 import Services from "./modules/services/Services";
 import About from "./common/components/About";

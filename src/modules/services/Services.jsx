@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Container from "../../common/components/Container";
-import ServicesDetail from "./ServicesDetail";
+import ServicesDetail from "./components/ServicesDetail";
 import ServiceType from "../../common/components/ServiceType";
 import Overlay from "../../common/components/Overlay";
 
