@@ -23,6 +23,7 @@ import Slice from "./common/layout/Slice";
 import Services from "./modules/services/Services";
 import About from "./common/components/About";
 import Contact from "./modules/Contact/pages/Contact";
+import ShopDetail from "./modules/shop/pages/ShopDetail";
 
 const queryClient = new QueryClient();
 
@@ -37,6 +38,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <About />
       <CallToAction />
       {/* <Blog />  trang BLOG */}
+      {/* <ShopDetail/> */}
       <ShopListing/>
       <Contact/>
       <Services/>
