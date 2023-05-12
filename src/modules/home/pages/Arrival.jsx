@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Container from "../../../common/components/Container";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
-import ProductItem from "../../../common/components/ProductItem";
 import supabase from "../../../config/supabase";
+import ProductListing from "../../../common/components/Product/ProductListing";
 
 export default function Arrival() {
   const queryClient = useQueryClient();
@@ -60,13 +60,7 @@ export default function Arrival() {
       </Container>
 
       {/* Arrival items */}
-      <div className="w-full px-[15px] md:px-0 mx-auto">
-        <div className="flex flex-wrap mx-[18px]">
-          {product.map((productItem, index) => (
-            <ProductItem key={index} productItem={productItem} index={index} />
-          ))}
-        </div>
-      </div>
+      <ProductListing />
 
       {/* Button view all */}
       <div className="text-center">
