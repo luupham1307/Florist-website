@@ -11,11 +11,10 @@ export default function Arrival() {
     data: product,
     error,
   } = useQuery({
-    queryKey: ["product"],
+    queryKey: ["products"],
     queryFn: () => supabase.from("Product").select(),
     select: (res) => res.data,
   });
-
   if (isLoading) return <div>Loading...</div>;
 
   return (
@@ -60,7 +59,7 @@ export default function Arrival() {
       </Container>
 
       {/* Arrival items */}
-      <ProductListing />
+      <ProductListing data={product} />
 
       {/* Button view all */}
       <div className="text-center">

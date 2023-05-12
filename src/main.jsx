@@ -5,53 +5,49 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "./styles/swiper.css";
 import ReactDOM from "react-dom/client";
-import React from "react";
-import Navbar from "./common/layout/Navbar";
-import Benefits from "./modules/home/pages/Benefits";
-import Footer from "./common/layout/Footer/Footer";
-import Instagram from "./common/layout/Instagram/Instagram";
-import Posts from "./modules/home/pages/Posts";
-import CallToAction from "./modules/home/pages/CallToAction";
-import Categories from "./modules/home/pages/Categories";
-import Testimonial from "./common/components/Testimonial/Testimonial";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import Slide from "./modules/home/pages/Slide";
-import Blog from "./modules/blog/pages/Blog";
-import Arrival from "./modules/home/pages/Arrival";
-import ShopListing from "./modules/shop/pages/Shop";
-import Slice from "./common/layout/Slice";
-import Services from "./modules/services/Services";
-import About from "./common/components/About";
-import Contact from "./modules/Contact/pages/Contact";
-import ShopDetail from "./modules/shop/pages/ShopDetail";
-import MyTeam from "./modules/about/pages/MyTeam";
-import Out_Services from "./modules/about/pages/Services";
+
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+  BrowserRouter,
+  Link,
+  Routes,
+} from "react-router-dom";
+import Layout from "./common/layout";
+import Home from "./modules/home";
+import AboutNav from "./modules/about";
+import ServicesNav from "./modules/services";
+import BlogNav from "./modules/blog";
+import Contact from "./modules/contact";
+import ShopNav from "./modules/shop";
+
+
 
 const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <QueryClientProvider client={queryClient}>
-    <React.Fragment>
-      <Navbar />
-      <Slide />
-      <Benefits />
-      {/* <Slice/> */}
-      <Categories />
-      <About />
-      <MyTeam />
-      <Out_Services />
+    <BrowserRouter>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<AboutNav />} />
+          <Route path="/services" element={<ServicesNav />} />
+          <Route path="/shop" element={<ShopNav />} />
+          <Route path="/blog" element={<BlogNav />} />
+          {/* <Route path="/pages" element={<Pages />} /> */}
+          <Route path="/contact" element={<Contact />} />
 
-      <CallToAction />
-      {/* <Blog />  trang BLOG */}
-      {/* <ShopDetail/> */}
-      <ShopListing />
-      <Contact />
-      <Services />
-      <Arrival />
-      <Posts />
-      <Testimonial />
-      <Instagram />
-      <Footer />
-    </React.Fragment>
+
+
+          {/* <Route path="/about" Component={About} /> */}
+
+        </Routes>
+      </Layout>
+
+
+    </BrowserRouter>
   </QueryClientProvider>
 );

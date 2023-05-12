@@ -1,7 +1,7 @@
 import React from "react";
-import ContainerFuild from "../components/ContainerFuild";
+import ContainerFuild from "./ContainerFuild";
 
-export default function Slice({pageHeader, pageName}) {
+export default function Slice({ pageHeader, pageName }) {
   return (
     <div>
       <ContainerFuild>
@@ -26,7 +26,7 @@ export default function Slice({pageHeader, pageName}) {
                 Home
               </a>
               <a href="" className="">
-               {pageName}
+                {pageName}
               </a>
             </div>
           </div>
