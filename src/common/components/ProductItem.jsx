@@ -19,13 +19,13 @@ export default function ProductItem({ productItem }) {
 
         {/* Icon */}
         <ul className="hidden absolute group-hover:flex  bottom-7 left-1/2 translate-x-[-50%] text-center">
-          <li className="hover:rotate-[360deg] hover:shadow-[#ECF2E6] hover:shadow-[0px_3px_6px] hover:text-white hover:bg-[#f45d96] transition-all mr-[10px] w-[40px] h-[40px] bg-white text-lg leading-10 rounded-full">
+          <li className="hover:rotate-[360deg] shadow-[#ECF2E6] shadow-[0px_3px_6px] hover:text-white hover:bg-[#f45d96] transition-all mr-[10px] w-[40px] h-[40px] bg-white text-lg leading-10 rounded-full">
             <i className=" fa-solid fa-magnifying-glass fa-rotate-90"></i>
           </li>
-          <li className="hover:rotate-[360deg] hover:shadow-[#ECF2E6] hover:shadow-[0px_3px_6px] hover:text-white hover:bg-[#f45d96] transition-all mr-[10px]  w-[40px] h-[40px] bg-white text-lg leading-10 rounded-full">
+          <li className="hover:rotate-[360deg] shadow-[#ECF2E6] shadow-[0px_3px_6px] hover:text-white hover:bg-[#f45d96] transition-all mr-[10px]  w-[40px] h-[40px] bg-white text-lg leading-10 rounded-full">
             <i className=" fa-solid fa-bag-shopping"></i>
           </li>
-          <li className="hover:rotate-[360deg] hover:shadow-[#ECF2E6] hover:shadow-[0px_3px_6px] hover:text-white hover:bg-[#f45d96] transition-all mr-[10px]  w-[40px] h-[40px] bg-white text-lg leading-10 rounded-full">
+          <li className="hover:rotate-[360deg] shadow-[#ECF2E6] shadow-[0px_3px_6px] hover:text-white hover:bg-[#f45d96] transition-all mr-[10px]  w-[40px] h-[40px] bg-white text-lg leading-10 rounded-full">
             <i className=" fa-regular fa-heart"></i>
           </li>
         </ul>

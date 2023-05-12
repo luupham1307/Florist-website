@@ -19,7 +19,14 @@ export default function ShopListing() {
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <div className=" py-24 lg:px-[15px]  ">
+    <div className=" py-24 lg:px-[15px] ">
+      {/* Filter */}
+      <div>
+        <div></div>
+      
+        
+       
+      </div>
       {/* Product items */}
       <div className="w-full px-[15px] md:px-0 mx-auto">
         <div className="flex flex-wrap mx-[18px]">
