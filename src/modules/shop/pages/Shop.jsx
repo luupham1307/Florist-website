@@ -11,7 +11,7 @@ export default function ShopListing() {
     data: product,
     error,
   } = useQuery({
-    queryKey: ["product"],
+    queryKey: ["products"],
     queryFn: () => supabase.from("Product").select(),
     select: (res) => res.data,
   });
@@ -25,7 +25,7 @@ export default function ShopListing() {
         <div></div>
       </div>
       {/* Product items */}
-      <ProductListing />
+      <ProductListing products={product} />
 
       {/* Button view all */}
       <div className="text-center">

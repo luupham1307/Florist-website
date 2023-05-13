@@ -59,7 +59,7 @@ export default function Arrival() {
       </Container>
 
       {/* Arrival items */}
-      <ProductListing data={product} />
+      <ProductListing products={product} />
 
       {/* Button view all */}
       <div className="text-center">
