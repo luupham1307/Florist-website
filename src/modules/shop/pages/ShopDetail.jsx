@@ -99,7 +99,7 @@ export default function ShopDetail() {
               <div className="flex border-solid border-y-[1px] border-[#e1e1e1] py-12 mb-10">
                 <div className="flex items-center w-[170px] h-12 px-6 mb-5 mr-5 border-solid border-[1px] border-[#e1e1e1] rounded-full">
                   <div className="">
-                    <i class="fa-solid fa-minus"></i>
+                    <i className="fa-solid fa-minus"></i>
                   </div>
                   <div className="p-1 w-full">
                     <input
@@ -109,7 +109,7 @@ export default function ShopDetail() {
                     />
                   </div>
                   <div className="">
-                    <i class="fa-solid fa-plus"></i>
+                    <i className="fa-solid fa-plus"></i>
                   </div>
                 </div>
                 <button className="relative w-fit h-12 mb-5 mr-4 pb-3 pt-3.5 pr-7 pl-[50px] border-solid border-[1px] border-[#e1e1e1] rounded-full bg-black font-[Quicksand] text-white text-base font-bold uppercase">
