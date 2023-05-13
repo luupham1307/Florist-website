@@ -3,6 +3,7 @@ import Container from "../../../common/components/Container";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import supabase from "../../../config/supabase";
 import ProductListing from "../../../common/components/Product/ProductListing";
+// import ProductListing from "../../../common/components/Product/ProductListing";
 
 export default function Arrival() {
   const queryClient = useQueryClient();
