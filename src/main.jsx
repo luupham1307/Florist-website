@@ -22,6 +22,7 @@ import ServicesNav from "./modules/services";
 import BlogNav from "./modules/blog";
 import Contact from "./modules/contact";
 import ShopNav from "./modules/shop";
+import PagesNav from "./modules/pages/cart";
 
 
 
@@ -37,7 +38,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/services" element={<ServicesNav />} />
           <Route path="/shop" element={<ShopNav />} />
           <Route path="/blog" element={<BlogNav />} />
-          {/* <Route path="/pages" element={<Pages />} /> */}
+          <Route path="/pages" element={<PagesNav />} />
           <Route path="/contact" element={<Contact />} />
 
 
