@@ -18,10 +18,10 @@ export default function Arrival() {
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <div>
-      {/* Arrival text */}
+    <div className="pb-[100px]">
+      {/* Arrival Heading & Filter */}
       <Container>
-        <div className="text-center">
+        <div className="text-center ">
           {/* Heading */}
           <div>
             <span className="font-[Quicksand] text-[#f45d96] text-base font-bold uppercase tracking-[4px] mb-2 ">
