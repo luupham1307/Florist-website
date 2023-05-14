@@ -1,15 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-let carts = [
-    {
 
-    },
-    {
 
-    }
-]
 export default function CartDetails() {
+    let [count, setCount] = useState(0);
+    const onChange = (e) => {
+
+
+        console.log(e)
+        setCount(count + 1)
+    }
+
+
     return (
+
         <div>
             <div className='py-[100px]'>
 
@@ -38,7 +42,30 @@ export default function CartDetails() {
                                 <td className="py-2 px-4">
                                     <div>
                                         <span>-</span>
-                                        <input type="text" value={1} />
+                                        <input type="text" onChange={onChange} value={useState} />
+                                        <span>+</span>
+                                    </div>
+                                </td>
+                                <td className="py-2 px-4">$21.00</td>
+                                <td>
+                                    <i className='fa fa-times-circle'></i>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td className="py-2 px-4">
+                                    <div>
+                                        <img src="https://preview.colorlib.com/theme/florist/img/cart/cat-1.jpg.webp" alt="" />
+                                    </div>
+                                    <div>
+                                        <h4>Cactus Gym</h4>
+                                        <span>$21.00</span>
+                                    </div>
+                                </td>
+                                <td className="py-2 px-4">
+                                    <div>
+                                        <span>-</span>
+                                        <input type="text" onChange={onChange} value={useState} />
                                         <span>+</span>
                                     </div>
                                 </td>
