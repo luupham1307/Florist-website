@@ -3,7 +3,7 @@ import React from "react";
 export default function ServiceType({ onShowSerDetail, arrSer }) {
   return (
     <div className="lg:basis-2/6 lg:pt-[35px] lg:pr-[15px] ">
-      {arrSer.map((item,index) => {
+      {arrSer.map((item, index) => {
         return (
           <a
             onClick={onShowSerDetail}

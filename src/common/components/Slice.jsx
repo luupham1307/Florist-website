@@ -14,7 +14,7 @@ export default function Slice({ pageHeader, pageName }) {
           />
 
           {/* Text */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-[50%] -translate-y-[50%] text-center w-full px-[15px]  py-[60px]">
+          <div className="absolute top-1/2 left-1/2 -translate-x-[50%] -translate-y-[50%] text-center w-full px-[15px] py-[60px]">
             <h2 className="font-[Libre Baskerville] text-[50px] font-normal leading-5 text-[#111111] mb-5 w-full ">
               {pageHeader}
             </h2>
