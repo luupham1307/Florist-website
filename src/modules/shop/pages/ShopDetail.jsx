@@ -1,13 +1,13 @@
 import React from "react";
 import Container from "../../../common/components/Container";
 
-export default function ShopDetail() {
+export default function ShopDetail({ products }) {
   return (
     <div>
       {/* Product Detail */}
       <div className="py-5">
         <Container>
-          <div className="lg:flex ">
+          <div className="lg:flex pb-[60px] border-solid border-b-[1px] border-[#e1e1e1]">
             {/* image */}
             <div className="flex lg:basis-1/2 w-full h-full ">
               <div className="w-full h-full md:h-[720px]  mr-5 mb-10 basis-4/5">
@@ -52,7 +52,7 @@ export default function ShopDetail() {
             </div>
 
             {/* Text */}
-            <div className="lg:pl-[30px] lg:basis-1/2">
+            <div className="lg:pl-[30px] xl:pl-12 lg:basis-1/2">
               {/* Name & Price */}
               <div className="mb-10 relative  text-[#111111]">
                 <div className="w-full">
@@ -79,48 +79,73 @@ export default function ShopDetail() {
                 <div className="absolute top-0 right-0 font-[Quicksand] text-[#f45d96] font-bold text-[30px]">
                   <p>$ 34.00</p>
                 </div>
+                <ul className="font-[Quicksand] text-[#111111]">
+                  <li>
+                    <span className="text-[#888888]">Categories:</span>{" "}
+                    Succulent
+                  </li>
+                  <li>
+                    <span className="text-[#888888]">Poduct code: </span> PM 101
+                  </li>
+                  <li>
+                    <span className="text-[#888888]">Reward points:</span> 30
+                  </li>
+                  <li>
+                    <span className="text-[#888888]">Availability:</span> In
+                    Stock
+                  </li>
+                </ul>
               </div>
 
-              <ul className="font-[Quicksand]">
-                <li>
-                  <span className="text-[#888888]">Categories:</span> Succulent
-                </li>
-                <li>
-                  <span className="text-[#888888]">Poduct code: </span> PM 101
-                </li>
-                <li>
-                  <span className="text-[#888888]">Reward points:</span> 30
-                </li>
-                <li>
-                  <span className="text-[#888888]">Availability:</span> In Stock
-                </li>
-              </ul>
-
+              {/* Count & button */}
               <div className="flex border-solid border-y-[1px] border-[#e1e1e1] py-12 mb-10">
-                <div className="flex items-center w-[170px] h-12 px-6 mb-5 mr-5 border-solid border-[1px] border-[#e1e1e1] rounded-full">
-                  <div className="">
+                {/* Count */}
+                <div className="flex items-center w-[170px] h-12 px-6 mb-5 mr-5 border-solid border-[1px] border-[#e1e1e1] rounded-full font-[Quicksand]">
+                  <div className="text-[#e1e1e1] cursor-pointer">
                     <i className="fa-solid fa-minus"></i>
                   </div>
                   <div className="p-1 w-full">
                     <input
-                      className="w-full text-center"
+                      className="w-full text-center text-[20px] font-bold "
                       type="text"
                       value="1"
                     />
                   </div>
-                  <div className="">
+                  <div className="text-[#e1e1e1] cursor-pointer">
                     <i className="fa-solid fa-plus"></i>
                   </div>
                 </div>
-                <button className="relative w-fit h-12 mb-5 mr-4 pb-3 pt-3.5 pr-7 pl-[50px] border-solid border-[1px] border-[#e1e1e1] rounded-full bg-black font-[Quicksand] text-white text-base font-bold uppercase">
-                  <div className="inline-block absolute left-0 -translate-y-[30%] -translate-x-[22%] transition-all  w-[50px] h-[50px] bg-[#f45d96] text-xl text-center leading-10 rounded-full">
+
+                {/* Add cart button */}
+                <button className="group relative w-fit h-12 mb-5 mr-4 pb-3 pt-3.5 pr-7 pl-[50px] border-solid border-[1px] border-[#e1e1e1] rounded-full bg-black font-[Quicksand] text-white text-base font-bold uppercase">
+                  <div className="group-active:translate-x-[140px] group-active:bg-[#888888]  inline-block absolute left-0 -translate-y-[30%] -translate-x-[18%] transition-all  w-[48px] h-[48px] pt-1 bg-[#f45d96] text-xl text-center leading-10 rounded-full">
                     <i className="fa-solid fa-bag-shopping"></i>
                   </div>
                   add to cart
                 </button>
 
-                <div className="inline-block transition-all w-[50px] h-[50px] bg-[#e1e1e1] text-xl text-center leading-10 rounded-full">
+                {/* Like button */}
+                <div  className="inline-block transition-all w-[48px] h-[48px] pt-1.5 bg-[#e1e1e1] text-xl text-center leading-10 rounded-full cursor-pointer active:bg-[#f45d96] active:text-white">
                   <i className="fa-regular fa-heart"></i>
+                </div>
+              </div>
+
+              {/* Description & review & Ship*/}
+              <div>
+                <div className="flex flex-wrap mb-[30px] font-['Libre_Baskerville'] text-[#888888] text-[20px]">
+                  <p className="pr-4">Description</p>
+                  <span>/</span>
+                  <p className="px-4">Shipping & Return</p>
+                  <span>/</span>
+                  <p className="pr-4">Reviews (03)</p>
+                </div>
+                <div className="font-[Quicksand] text-[#111111]">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Quis ipsum suspendisse ultrices gravida. Risus
+                    commodo viverra maecenas accumsan lacus vel facilisis.
+                  </p>
                 </div>
               </div>
             </div>
@@ -129,7 +154,16 @@ export default function ShopDetail() {
       </div>
 
       {/* Related product */}
-      <div></div>
+      <div className="pb-[60px]">
+        <h2 className="font-['Libre_Baskerville'] text-h2 text-[#111111] font-normal text-center">
+          Related product
+        </h2>
+        <div className="flex flex-wrap">
+          {/* {products.map((item) => {
+              return 
+            })} */}
+        </div>
+      </div>
     </div>
   );
 }
