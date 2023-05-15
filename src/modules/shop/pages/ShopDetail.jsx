@@ -1,7 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import Container from "../../../common/components/Container";
+import { isNumeric } from "../../../common/helpers";
 
 export default function ShopDetail({ products }) {
+  const [count, setCount] = useState(1)
+  const onChange = (e) => {
+    if (isNumeric(e.target.value))
+      setCount(e.target.value)
+  }
+
+  const decrease = () => {
+    if (count === 1)
+      return
+    setCount(count - 1)
+  }
+
+  const increase = () => {
+    setCount(count + 1)
+  }
+
   return (
     <div>
       {/* Product Detail */}
@@ -102,17 +119,17 @@ export default function ShopDetail({ products }) {
                 {/* Count */}
                 <div className="flex items-center w-[170px] h-12 px-6 mb-5 mr-5 border-solid border-[1px] border-[#e1e1e1] rounded-full font-[Quicksand]">
                   <div className="text-[#e1e1e1] cursor-pointer">
-                    <i className="fa-solid fa-minus"></i>
+                    <i className="fa-solid fa-minus" onClick={decrease}></i>
                   </div>
                   <div className="p-1 w-full">
                     <input
                       className="w-full text-center text-[20px] font-bold "
-                      type="text"
-                      value="1"
+                      type="text" onChange={onChange}
+                      value={count}
                     />
                   </div>
                   <div className="text-[#e1e1e1] cursor-pointer">
-                    <i className="fa-solid fa-plus"></i>
+                    <i className="fa-solid fa-plus" onClick={increase}></i>
                   </div>
                 </div>
 
@@ -125,7 +142,7 @@ export default function ShopDetail({ products }) {
                 </button>
 
                 {/* Like button */}
-                <div  className="inline-block transition-all w-[48px] h-[48px] pt-1.5 bg-[#e1e1e1] text-xl text-center leading-10 rounded-full cursor-pointer active:bg-[#f45d96] active:text-white">
+                <div className="inline-block transition-all w-[48px] h-[48px] pt-1.5 bg-[#e1e1e1] text-xl text-center leading-10 rounded-full cursor-pointer active:bg-[#f45d96] active:text-white">
                   <i className="fa-regular fa-heart"></i>
                 </div>
               </div>

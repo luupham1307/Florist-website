@@ -1,14 +1,27 @@
 import React, { useState } from 'react'
 import Container from '../../../../common/components/Container';
+import { isNumeric } from '../../../../common/helpers';
 
 
 
 export default function CartDetails() {
-    let [count, setCount] = useState(0);
+    // khai báo biến có trang thái mới là count
+    const [count, setCount] = useState(1);
+    const [deleteProduct, setDeleteProduct] = useState(false)
     const onChange = (e) => {
-        console.log(e)
+        if (isNumeric(e.target.value))
+            setCount(e.target.value)
+    }
+    const decrease = () => {
+        if (count === 1)
+            return
+        setCount(count - 1)
+    }
+
+    const increase = () => {
         setCount(count + 1)
     }
+
 
 
     return (
@@ -27,7 +40,7 @@ export default function CartDetails() {
                                 </tr>
                             </thead>
                             <tbody className="bg-white divide-y divide-gray-200 ">
-                                <tr>
+                                <tr hidden={deleteProduct}>
                                     <td className="py-[35px] lg:flex">
                                         <div className='mr-[30px]'>
                                             <img src="https://preview.colorlib.com/theme/florist/img/cart/cat-1.jpg.webp" alt="" />
@@ -39,20 +52,17 @@ export default function CartDetails() {
                                     </td>
                                     <td className="py-[35px]  text-center ">
                                         <div className=''>
-                                            <span>-</span>
-                                            <input className="w-[80px] text-center text-[20px] font-bold font-['Quicksand']" type="text" onChange={onChange} value={1} />
-                                            <span>+</span>
+
+                                            <button onClick={decrease}>-</button>
+                                            <input className="w-[80px] text-center text-[20px] font-bold font-['Quicksand']" type="text" onChange={onChange} value={count} />
+                                            <button onClick={increase}>+</button>
                                         </div>
                                     </td>
-                                    <td className="py-[35px] text-[20px] font-bold font-['Quicksand']">$21.00</td>
+                                    <td className="py-[35px] text-[20px] font-bold font-['Quicksand']">${count * 21}.00</td>
                                     <td className='py-[35px]' >
-                                        <i className='fa fa-times-circle text-[#f45d96] text-[20px]'></i>
+                                        <i className='fa fa-times-circle text-[#f45d96] text-[20px]' onClick={() => setDeleteProduct(true)} ></i>
                                     </td>
                                 </tr>
-
-
-
-
 
                             </tbody>
                         </table>
