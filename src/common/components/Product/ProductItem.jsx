@@ -31,7 +31,7 @@ export default function ProductItem({ productItem }) {
         </ul>
       </div>
       <div className="text-center text-[#111111] mb-10  md:mb-[50px]">
-        <h5 className="font-['Libre_Baskerville'] text-lg font-normal capitalize pt-6 mb-2 ">
+        <h5 className="font-['Libre_Baskerville'] text-lg font-normal capitalize pt-6 mb-2 cursor-pointer">
           {productItem.name}
         </h5>
 
