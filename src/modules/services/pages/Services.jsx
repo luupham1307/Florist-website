@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Container from "../../common/components/Container";
-import ServicesDetail from "./components/ServicesDetail";
-import ServiceType from "../../common/components/ServiceType";
-import Overlay from "../../common/components/Overlay";
+import Container from "../../../common/components/Container";
+import ServicesDetail from "../components/ServicesDetail";
+import ServiceType from "../../../common/components/ServiceType";
+import Overlay from "../../../common/components/Overlay";
 
 export default function Services() {
   let arrServices = [
@@ -31,15 +31,16 @@ export default function Services() {
       price: "From $150 - $300",
     },
   ];
+
   const [showVideo, setShowVideo] = useState(false);
-  const [showSerDetail, setShowSerDetail] = useState(false);
   function hanldeShowVideoModal(e) {
     e.preventDefault();
     setShowVideo(!showVideo);
   }
 
-  function handleShowSerDetail() {
-    setShowSerDetail(!showSerDetail);
+  const [showSerDetail, setShowSerDetail] = useState(0);
+  function handleShowSerDetail(number) {
+    setShowSerDetail(number);
   }
 
   return (
@@ -48,15 +49,18 @@ export default function Services() {
         <div className="lg:flex">
           {/* Servivce type */}
           <ServiceType
-            onShowSerDetail={handleShowSerDetail}
-            showSerDetail={showSerDetail}
+            onShowSerDetail={() => handleShowSerDetail(0)}
             arrSer={arrServices}
+            showSerDetail={showSerDetail}
           />
 
           {/* Service detail */}
           <ServicesDetail
             onShowVideo={hanldeShowVideoModal}
             arrSer={arrServices}
+            showSerDetail={showSerDetail}
+            onShowSerDetail={() => handleShowSerDetail(0)}
+            number={number}
           />
         </div>
       </Container>

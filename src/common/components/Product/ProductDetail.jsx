@@ -1,25 +1,39 @@
 import { useQuery } from "@tanstack/react-query";
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import supabase from "../../../config/supabase";
 
 export default function ProductDetail() {
-  const { productId } = useParams();
+  //   const { productId } = useParams();
 
-  const {
-    isLoading,
-    data: product,
-    error,
-  } = useQuery({
-    queryKey: ["products", productId],
-    queryFn: () =>
-      supabase.from("product").select().eq("id", productId).single(),
-    select: (res) => res.data,
-  });
+  //   const {
+  //     isLoading,
+  //     data: product,
+  //     error,
+  //   } = useQuery({
+  //     queryKey: ["products", productId],
+  //     queryFn: () =>
+  //       supabase.from("product").select().eq("id", productId).single(),
+  //     select: (res) => res.data,
+  //   });
 
-  if (isLoading) return <div>Loading...</div>;
+  //   if (isLoading) return <div>Loading...</div>;
 
-  console.log(product);
+  //   console.log(product);
+
+  const [count, setCount] = useState(1);
+  function handleChange(e) {
+    setCount(e.target.value);
+  }
+
+  function handleMinus() {
+    if (count > 0) setCount(count - 1);
+  }
+
+  function handlePlus() {
+    setCount(count + 1);
+  }
+
   return (
     <div>
       <div className="lg:flex pb-[60px] border-solid border-b-[1px] border-[#e1e1e1]">
@@ -117,17 +131,24 @@ export default function ProductDetail() {
           <div className="flex border-solid border-y-[1px] border-[#e1e1e1] py-12 mb-10">
             {/* Count */}
             <div className="flex items-center w-[170px] h-12 px-6 mb-5 mr-5 border-solid border-[1px] border-[#e1e1e1] rounded-full font-[Quicksand]">
-              <div className="text-[#e1e1e1] cursor-pointer">
+              <div
+                className="text-[#e1e1e1] cursor-pointer"
+                onClick={handleMinus}
+              >
                 <i className="fa-solid fa-minus"></i>
               </div>
               <div className="p-1 w-full">
                 <input
                   className="w-full text-center text-[20px] font-bold "
                   type="text"
-                  value="1"
+                  value={count}
+                  onChange={handleChange}
                 />
               </div>
-              <div className="text-[#e1e1e1] cursor-pointer">
+              <div
+                className="text-[#e1e1e1] cursor-pointer"
+                onClick={handlePlus}
+              >
                 <i className="fa-solid fa-plus"></i>
               </div>
             </div>

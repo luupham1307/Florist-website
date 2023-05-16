@@ -1,7 +1,6 @@
-import { func } from "prop-types";
 import React, { useState } from "react";
 
-export default function BlogItem({ blogItem, index }) {
+export default function BlogItem({blogItem, index }) {
   return (
     <div key={index} className="group mb-[50px] md:basis-1/2 lg:basis-1/3">
       {/* shadow */}
