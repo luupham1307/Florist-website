@@ -25,8 +25,6 @@ import ShopNav from "./modules/shop";
 import PagesNav from "./modules/pages/cart";
 import ContactNav from "./modules/contact";
 
-
-
 const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -41,12 +39,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/blog" element={<BlogNav />} />
           <Route path="/pages" element={<PagesNav />} />
           <Route path="/contact" element={<ContactNav />} />
-
-
         </Routes>
       </Layout>
-
-
     </BrowserRouter>
   </QueryClientProvider>
 );

@@ -34,7 +34,7 @@ export default function Blog() {
           >
             View all posts
           </a>
-        </div>
+        </div> 
       </Container>
     </div>
   );
