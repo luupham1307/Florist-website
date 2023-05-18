@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-export default function ProductItem({ productItem, index }) {
+export default function ProductItem({ productItem }) {
   return (
     <div className="group w-full md:basis-1/2 lg:basis-1/3 xl:basis-1/4 2xl:basis-1/5  md:px-[15px]">
       <div className="relative w-full font-[Quicksand] text-center">
