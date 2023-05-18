@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import ContainerFuild from "../../../common/components/ContainerFuild";
 
 export default function CallToAction() {
@@ -22,12 +23,12 @@ export default function CallToAction() {
                 <h2 className="text-[42px] text-[#ffffff] mb-[42px] ">
                   Let out flowers make your party more perfect
                 </h2>
-                <button className="font-[Quicksand] bg-[#f45d96] text-[#ffffff] text-sm leading-5 tracking-[2px] font-bold px-[30px] py-[14px] uppercase rounded-full ">
+                <Link to="/shop" className="font-[Quicksand] bg-[#f45d96] text-[#ffffff] text-sm leading-5 tracking-[2px] font-bold px-[30px] py-[14px] uppercase rounded-full ">
                   Order now
-                </button>
-                <button className="font-[Quicksand] bg-[#ffffff] text-[#f45d96] text-sm leading-5 tracking-[2px] font-bold px-[30px] py-[14px] ml-4 uppercase rounded-full ">
+                </Link>
+                <Link to="/contact/contact" className="font-[Quicksand] bg-[#ffffff] text-[#f45d96] text-sm leading-5 tracking-[2px] font-bold px-[30px] py-[14px] ml-4 uppercase rounded-full ">
                   Contact Us
-                </button>
+                </Link>
               </div>
             </div>
           </div>

@@ -3,12 +3,14 @@ import Container from "../../../common/components/Container";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import supabase from "../../../config/supabase";
 import ProductListing from "../../../common/components/Product/ProductListing";
+import ProductItem from "../../../common/components/Product/ProductItem";
+import { Link } from "react-router-dom";
 
 export default function Arrival() {
   const queryClient = useQueryClient();
   const {
     isLoading,
-    data: product,
+    data:product,
     error,
   } = useQuery({
     queryKey: ["products"],
@@ -60,16 +62,32 @@ export default function Arrival() {
 
       {/* Arrival items */}
 
-      <ProductListing products={product} />
+      <div className="w-full px-[15px] md:px-0 mx-auto">
+        <Container>
+          <div className="flex flex-wrap mx-[18px]">
+            {product.map((productItem, index) => {
+              if (index <= 10) {
+                <ProductItem
+                  key={index}
+                  productItem={productItem}
+                  index={index}
+                />;
+              }
+            })}
+          </div>
+        </Container>
+      </div>
+
+      {/* <ProductListing products={product} /> */}
 
       {/* Button view all */}
       <div className="text-center">
-        <a
-          href=""
+        <Link 
+          to="/shop"
           className="inline-block font-[Quicksand] text-sm text-[#111111] font-bold tracking-[2px] uppercase pb-[2px] mb-[2px] border-solid border-b-[2px] border-[#111111]"
         >
           View all products
-        </a>
+        </Link>
       </div>
     </div>
   );
