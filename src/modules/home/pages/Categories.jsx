@@ -8,7 +8,7 @@ export default function Categories() {
     useEffect(() => {
         if (!categories.length) {
             setIsLoading(true)
-            axios.get('http://18.141.139.55:3000').then((res) => {
+            axios.get('http://18.141.139.55:3000/categories').then((res) => {
 
                 setCategories(res.data.data)
                 setIsLoading(false);
@@ -27,7 +27,7 @@ export default function Categories() {
 
                 <div className="flex flex-wrap  ">
                     {categories.map((items, index) => (
-                        <div key={index} className="relative w-full flex md:basis-1/2 xl:basis-1/4 pr-[30px]   mb-[30px] ">
+                        <div key={index} className="relative w-full flex md:basis-1/2 xl:basis-1/4 sm:pr-[30px]   mb-[30px] ">
                             <img className=" w-full h-[440px] object-cover object-center " src={items.imgUrl} alt="Categories1" />
                             <div className="absolute  bg-white  bottom-3 text-center w-[80%] left-[50%] translate-x-[-55%] py-4 ">
                                 <h4 className="text-h4 font-['Libre_Baskerville'] text-center">{items.title}</h4>
