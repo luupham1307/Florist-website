@@ -37,10 +37,6 @@ export default function Navbar() {
                             </li>
 
                             <li>
-                                <Link to="/pages" className="block py-2 pl-3 pr-4 text-gray-900  hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#f45d96] md:p-0  ">Pages</Link>
-                            </li>
-
-                            <li>
                                 <Link to="/contact" className="block py-2 pl-3 pr-4 text-gray-900  hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#f45d96] md:p-0  ">Contact</Link>
                             </li>
                         </ul>
@@ -49,6 +45,7 @@ export default function Navbar() {
                     <div className="flex ">
                         {/* icon */}
                         <div className="hidden lg:flex lg:gap-12 text-[#f45d96] ">
+
                             <a href="">
                                 <i className="fa-solid fa-magnifying-glass"></i>
                             </a>
@@ -56,10 +53,10 @@ export default function Navbar() {
                             <a href="">
                                 <i className="fa-sharp fa-solid fa-heart"></i>
                             </a>
-
-                            <a href="">
+                            {/* giỏ hàng */}
+                            <Link to="/CartDetails">
                                 <i className="fa-sharp fa-solid fa-cart-shopping"></i>
-                            </a>
+                            </Link>
                         </div>
 
                         <div className="block min-[992px]:hidden">

@@ -59,6 +59,7 @@ export default function Arrival() {
       </Container>
 
       {/* Arrival items */}
+
       <ProductListing products={product} />
 
       {/* Button view all */}
