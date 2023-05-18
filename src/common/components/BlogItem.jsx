@@ -16,13 +16,13 @@ export default function BlogItem({ blogItem, index }) {
         </div>
 
         {/* blog content */}
-        <div className="relative h-[300px] px-[35px] pt-[38px] pb-[30px] bg-white text-center">
+        <div className="relative  h-[300px] px-[35px] pt-[38px] pb-[30px] bg-white text-center">
           <span
             className={`absolute inline-block font-[Quicksand] top-0 left-1/2 -translate-x-[50%] -translate-y-[50%] text-[14px] text-white font-bold uppercase bg-black group-hover:bg-[#f45d96] px-3 pt-1 pb-[2px]`}
           >
             {blogItem.type}
           </span>
-          <Link to="/cart/blogdetail" className="group-hover:underline">
+          <Link to="/blogdetail" className="group-hover:underline">
             <h4 className="font-[Libre Baskerville] text-h4 font-normal mb-3">
               {blogItem.title}
             </h4>

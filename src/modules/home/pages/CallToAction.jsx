@@ -30,7 +30,7 @@ export default function CallToAction() {
                     </Link>
                   </div>
                   <div>
-                    <Link to="/contact/contact" className="font-[Quicksand] bg-[#ffffff] text-[#f45d96] text-sm leading-5 tracking-[2px] font-bold px-[30px] py-[14px] sm:ml-4 uppercase rounded-full ">
+                    <Link to="/contact" className="font-[Quicksand] bg-[#ffffff] text-[#f45d96] text-sm leading-5 tracking-[2px] font-bold px-[30px] py-[14px] sm:ml-4 uppercase rounded-full ">
                       Contact Us
                     </Link>
                   </div>

@@ -21,12 +21,12 @@ export default function ProductItem({ productItem }) {
         {/* Icon */}
         <ul className="hidden absolute group-hover:flex  bottom-7 left-1/2 translate-x-[-50%] text-center">
           <li className="hover:rotate-[360deg] shadow-[#ECF2E6] shadow-[0px_3px_6px] hover:text-white hover:bg-[#f45d96] transition-all mr-[10px] w-[40px] h-[40px] bg-white text-lg leading-10 rounded-full">
-            <Link to="/cart/shopdetail">
+            <Link to="/shopdetail">
               <i className=" fa-solid fa-magnifying-glass fa-rotate-90"></i>
             </Link>
           </li>
           <li className="hover:rotate-[360deg] shadow-[#ECF2E6] shadow-[0px_3px_6px] hover:text-white hover:bg-[#f45d96] transition-all mr-[10px]  w-[40px] h-[40px] bg-white text-lg leading-10 rounded-full">
-            <Link to="/cart/CartDetails">
+            <Link to="/cartDetails">
               <i className=" fa-solid fa-bag-shopping"></i>
             </Link>
           </li>
@@ -38,9 +38,12 @@ export default function ProductItem({ productItem }) {
         </ul>
       </div>
       <div className="text-center text-[#111111] mb-10  md:mb-[50px]">
-        <h5 className="font-['Libre_Baskerville'] text-lg font-normal capitalize pt-6 mb-2 cursor-pointer">
-          {productItem.name}
-        </h5>
+        <Link to="/shopdetai">
+          <h5 className="font-['Libre_Baskerville'] text-lg font-normal capitalize pt-6 mb-2 cursor-pointer">
+            {productItem.name}
+          </h5>
+        </Link>
+
 
         <p className="group-hover:hidden font-[Quicksand] text-base font-bold ">
           $ {productItem.price}
