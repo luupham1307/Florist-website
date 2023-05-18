@@ -20,7 +20,6 @@ import Home from "./modules/home";
 import AboutNav from "./modules/about";
 import ServicesNav from "./modules/services";
 import BlogNav from "./modules/blog";
-import Contact from "./modules/contact";
 import ShopNav from "./modules/shop";
 import ContactNav from "./modules/contact";
 
@@ -30,6 +29,7 @@ import ShopDetail from "./modules/cart/ShopDetail";
 import Shop from "./modules/shop/pages/Shop";
 import Blog from "./modules/blog/pages/Blog";
 import CartDetails from "./modules/cart/CartDetails";
+import Contact from "./modules/Contact/pages/Contact";
 
 const queryClient = new QueryClient();
 
