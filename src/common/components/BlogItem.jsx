@@ -1,17 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 
-export default function BlogItem({blogItem, index }) {
+export default function BlogItem({ blogItem, index }) {
+  const thumbnail = blogItem && blogItem.thumbnail;
+  if (!blogItem || typeof blogItem.type === "undefined") {
+    return null;
+  }
+
   return (
     <div key={index} className="group mb-[50px] md:basis-1/2 lg:basis-1/3">
       {/* shadow */}
       <div className="md:mx-[15px] shadow-xl">
         {/* image */}
         <div>
-          <img
-            className="w-full"
-            src={blogItem.thumbnail}
-            alt={`blog-img-${index}`}
-          />
+          {thumbnail && (
+            <img
+              className="w-full"
+              src={thumbnail}
+              alt={`blog-img-${index}`}
+            />
+          )}
         </div>
 
         {/* blog content */}
@@ -21,11 +29,11 @@ export default function BlogItem({blogItem, index }) {
           >
             {blogItem.type}
           </span>
-          <a className="group-hover:underline" href="">
+          <Link to="/blog/blogdetail" className="group-hover:underline">
             <h4 className="font-[Libre Baskerville] text-h4 font-normal mb-3">
               {blogItem.title}
             </h4>
-          </a>
+          </Link>
 
           <p className="font-[Quicksand] text-sm text-[#111111] font-normal mb-[10px]">
             {blogItem.description}

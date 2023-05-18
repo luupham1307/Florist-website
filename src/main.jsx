@@ -25,6 +25,8 @@ import ShopNav from "./modules/shop";
 import ContactNav from "./modules/contact";
 import CartDetails from "./modules/cart/CartDetails";
 import Checkout from "./modules/cart/Checkout";
+import BlogItem from "./common/components/BlogItem";
+import BlogDetail from "./modules/blog/pages/BlogDetail";
 
 const queryClient = new QueryClient();
 
@@ -38,6 +40,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/services" element={<ServicesNav />} />
           <Route path="/shop" element={<ShopNav />} />
           <Route path="/blog" element={<BlogNav />} />
+          <Route path="/blog/blogdetail" element={<BlogDetail />} />
+
           <Route path="/contact" element={<ContactNav />} />
           <Route path="/cartDetails" element={<CartDetails />} />
           <Route path="/cartDetails/checkout" element={<Checkout />} />

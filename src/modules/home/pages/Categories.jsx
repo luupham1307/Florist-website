@@ -8,7 +8,7 @@ export default function Categories() {
     useEffect(() => {
         if (!categories.length) {
             setIsLoading(true)
-            axios.get('http://api.florist-store.learntodev.live/categories').then((res) => {
+            axios.get('http://18.141.139.55:3000').then((res) => {
 
                 setCategories(res.data.data)
                 setIsLoading(false);
