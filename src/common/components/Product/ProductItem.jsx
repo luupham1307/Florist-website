@@ -47,7 +47,7 @@ export default function ProductItem({ productItem }) {
         </p>
 
         <Link
-          to="/cart/cartdetails"
+          to="/cartdetails"
           className="hidden group-hover:block font-[Quicksand] text-[14px] text-[#f45d96] font-bold uppercase "
         >
           Add to cart
