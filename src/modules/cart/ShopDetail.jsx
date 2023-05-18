@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Container from "../../../common/components/Container";
-import { isNumeric } from "../../../common/helpers";
+import Container from "../../../../common/components/Container";
+import { isNumeric } from "../../../../common/helpers";
 
 export default function ShopDetail({ products }) {
   const [count, setCount] = useState(1)
