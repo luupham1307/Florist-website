@@ -2,6 +2,7 @@ import Container from "../../../common/components/Container";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import supabase from "../../../config/supabase";
 import BlogItem from "../../../common/components/BlogItem";
+import { Link } from "react-router-dom";
 
 export default function Posts() {
   const queryClient = useQueryClient();
@@ -34,9 +35,9 @@ export default function Posts() {
             </div>
             {/* Posts button */}
             <div>
-              <button className="font-[Quicksand] border-solid border-[#f45d96] border-[2px] rounded-full px-[30px] py-3 mb-[45px] text-[15px]  text-[#111111] font-bold tracking-[2px] uppercase md:justify-end ">
+              <Link to="/blog" className="font-[Quicksand] border-solid border-[#f45d96] border-[2px] rounded-full px-[30px] py-3 mb-[45px] text-[15px]  text-[#111111] font-bold tracking-[2px] uppercase md:justify-end ">
                 View all posts
-              </button>
+              </Link>
             </div>
           </div>
 

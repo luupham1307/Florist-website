@@ -1,5 +1,5 @@
 import React from "react";
-import Container from "../../../common/components/Container";
+import Container from "../../common/components/Container";
 
 export default function BlogDetail() {
   return (
@@ -120,8 +120,6 @@ export default function BlogDetail() {
               </div>
             </div>
           </div>
-
-
         </div>
       </Container>
     </div>

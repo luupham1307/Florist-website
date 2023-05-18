@@ -3,6 +3,7 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 import supabase from "../../../config/supabase";
 import ProductListing from "../../../common/components/Product/ProductListing";
 import Container from "../../../common/components/Container";
+import ProductItem from "../../../common/components/Product/ProductItem";
 
 export default function Shop() {
   const queryClient = useQueryClient();
@@ -35,7 +36,22 @@ export default function Shop() {
       </Container>
 
       {/* Product items */}
-      <ProductListing products={product} />
+      {/* <ProductListing products={product} /> */}
+      <div className="w-full px-[15px] md:px-0 mx-auto">
+        <Container>
+          <div className="flex flex-wrap mx-[18px]">
+            {product.map((productItem, index) => {
+              if (index <= 10) {
+                <ProductItem
+                  key={index}
+                  productItem={productItem}
+                  index={index}
+                />;
+              }
+            })}
+          </div>
+        </Container>
+      </div>
 
       {/* Button view all */}
       <div className="text-center">
