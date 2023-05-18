@@ -1,7 +1,18 @@
 import { Link, useLocation } from "react-router-dom";
 import Container from "../components/Container";
+import { useState } from "react";
 
 export default function Navbar() {
+    const [open, setOpen] = useState(false);
+    const [down, setDown] = useState(false);
+    const handleOpen () => {
+        setOpen(!open)
+    }
+
+    const handleDown () => {
+        setDown(!down)
+    }
+
     return (
         // navbar
         <Container>
@@ -15,7 +26,7 @@ export default function Navbar() {
 
                     {/* home... */}
                     <div className="items-center justify-between hidden lg:flex ">
-                        <ul className="flex flex-row gap-4 font-medium  xl:space-x-8   text-base uppercase ">
+                        <ul className="flex flex-row gap-4 font-medium  xl:space-x-8  text-base uppercase ">
                             <li>
                                 <Link to="/" className="block py-2 pl-3 pr-4 text-black md:bg-transparent md:hover:text-[#f45d96]  md:p-0 " aria-current="page">Home</Link>
                             </li>
