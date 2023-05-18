@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function ProductItem({ productItem }) {
   return (
@@ -20,13 +21,19 @@ export default function ProductItem({ productItem }) {
         {/* Icon */}
         <ul className="hidden absolute group-hover:flex  bottom-7 left-1/2 translate-x-[-50%] text-center">
           <li className="hover:rotate-[360deg] shadow-[#ECF2E6] shadow-[0px_3px_6px] hover:text-white hover:bg-[#f45d96] transition-all mr-[10px] w-[40px] h-[40px] bg-white text-lg leading-10 rounded-full">
-            <i className=" fa-solid fa-magnifying-glass fa-rotate-90"></i>
+            <Link to="/pages/ShopDetail">
+              <i className=" fa-solid fa-magnifying-glass fa-rotate-90"></i>
+            </Link>
           </li>
           <li className="hover:rotate-[360deg] shadow-[#ECF2E6] shadow-[0px_3px_6px] hover:text-white hover:bg-[#f45d96] transition-all mr-[10px]  w-[40px] h-[40px] bg-white text-lg leading-10 rounded-full">
-            <i className=" fa-solid fa-bag-shopping"></i>
+            <Link to="/pages/CartDetails">
+              <i className=" fa-solid fa-bag-shopping"></i>
+            </Link>
           </li>
           <li className="hover:rotate-[360deg] shadow-[#ECF2E6] shadow-[0px_3px_6px] hover:text-white hover:bg-[#f45d96] transition-all mr-[10px]  w-[40px] h-[40px] bg-white text-lg leading-10 rounded-full">
-            <i className=" fa-regular fa-heart"></i>
+            <Link>
+              <i className=" fa-regular fa-heart"></i>
+            </Link>
           </li>
         </ul>
       </div>
@@ -39,12 +46,12 @@ export default function ProductItem({ productItem }) {
           $ {productItem.price}
         </p>
 
-        <a
-          href=""
+        <Link
+          to="/pages/CartDetails"
           className="hidden group-hover:block font-[Quicksand] text-[14px] text-[#f45d96] font-bold uppercase "
         >
           Add to cart
-        </a>
+        </Link>
       </div>
     </div>
   );

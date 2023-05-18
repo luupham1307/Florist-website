@@ -1,7 +1,7 @@
 import React from "react";
 import Slice from "../../../common/components/Slice";
 import CartDetails from "./pages/CartDetails";
-import Checkout from "./pages/Checkout";
+import Checkout from "../checkout/pages/Checkout";
 import ProductDetail from "../../../common/components/Product/ProductDetail";
 
 export default function PagesNav() {
