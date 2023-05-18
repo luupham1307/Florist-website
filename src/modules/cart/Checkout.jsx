@@ -1,6 +1,11 @@
 import React from "react";
+<<<<<<<< HEAD:src/modules/pages/checkout/pages/Checkout.jsx
 import Container from "../../../../common/components/Container";
 import InputBox from "../../cart/components/InputBox";
+========
+import Container from "../../common/components/Container";
+import InputBox from "./InputBox";
+>>>>>>>> 34ad7e55eb24db84553d1106abcf8c8bd0e64956:src/modules/cart/Checkout.jsx
 
 export default function Checkout() {
   return (

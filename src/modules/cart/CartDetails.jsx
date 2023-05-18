@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import Container from '../../../../common/components/Container';
-import { isNumeric } from '../../../../common/helpers';
+import Container from '../../common/components/Container';
+import { isNumeric } from '../../common/helpers';
+import { Link } from 'react-router-dom';
 
 
 
@@ -53,9 +54,9 @@ export default function CartDetails() {
                                     <td className="py-[35px]  text-center ">
                                         <div className=''>
 
-                                            <button onClick={decrease}>-</button>
+                                            <button className='text-xl font-normal' onClick={decrease}>-</button>
                                             <input className="w-[80px] text-center text-[20px] font-bold font-['Quicksand']" type="text" onChange={onChange} value={count} />
-                                            <button onClick={increase}>+</button>
+                                            <button className='text-xl' onClick={increase}>+</button>
                                         </div>
                                     </td>
                                     <td className="py-[35px] text-[20px] font-bold font-['Quicksand']">${count * 21}.00</td>
@@ -127,7 +128,7 @@ export default function CartDetails() {
 
 
                             </ul>
-                            <a className="block h-[46px] text-center w-full text-white bg-black  uppercase  font-['Quicksand'] tracking-[2px] lg:tracking-normal test-base font-bold   px-[20px] py-[14px] " href="#">PROCEED TO CHECKOUT</a>
+                            <Link to="/cartDetails/checkout" className="block h-[46px] text-center w-full text-white bg-black  uppercase  font-['Quicksand'] tracking-[2px] lg:tracking-normal test-base font-bold   px-[20px] py-[14px] ">PROCEED TO CHECKOUT</Link>
                         </div>
 
                     </div>
