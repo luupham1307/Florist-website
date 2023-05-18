@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function ProductItem({ productItem }) {
   return (
@@ -39,12 +40,12 @@ export default function ProductItem({ productItem }) {
           $ {productItem.price}
         </p>
 
-        <a
-          href=""
+        <Link to={"/pages/CartDetails"}
+
           className="hidden group-hover:block font-[Quicksand] text-[14px] text-[#f45d96] font-bold uppercase "
         >
           Add to cart
-        </a>
+        </Link>
       </div>
     </div>
   );

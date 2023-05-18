@@ -1,5 +1,5 @@
 import React from "react";
-import Container from "../../../../common/components/Container";
+import Container from "../../common/components/Container";
 import InputBox from "./InputBox";
 
 export default function Checkout() {
