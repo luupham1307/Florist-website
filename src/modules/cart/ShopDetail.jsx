@@ -1,23 +1,21 @@
 import React, { useState } from "react";
-import Container from "../../../../common/components/Container";
-import { isNumeric } from "../../../../common/helpers";
+import { isNumeric } from "../../common/helpers";
+import Container from "../../common/components/Container";
 
 export default function ShopDetail({ products }) {
-  const [count, setCount] = useState(1)
+  const [count, setCount] = useState(1);
   const onChange = (e) => {
-    if (isNumeric(e.target.value))
-      setCount(e.target.value)
-  }
+    if (isNumeric(e.target.value)) setCount(e.target.value);
+  };
 
   const decrease = () => {
-    if (count === 1)
-      return
-    setCount(count - 1)
-  }
+    if (count === 1) return;
+    setCount(count - 1);
+  };
 
   const increase = () => {
-    setCount(count + 1)
-  }
+    setCount(count + 1);
+  };
 
   return (
     <div>
@@ -124,7 +122,8 @@ export default function ShopDetail({ products }) {
                   <div className="p-1 w-full">
                     <input
                       className="w-full text-center text-[20px] font-bold "
-                      type="text" onChange={onChange}
+                      type="text"
+                      onChange={onChange}
                       value={count}
                     />
                   </div>
@@ -171,16 +170,14 @@ export default function ShopDetail({ products }) {
       </div>
 
       {/* Related product */}
-      <div className="pb-[60px]">
+      {/* <div className="pb-[60px]">
         <h2 className="font-['Libre_Baskerville'] text-h2 text-[#111111] font-normal text-center">
           Related product
         </h2>
         <div className="flex flex-wrap">
-          {/* {products.map((item) => {
-              return 
-            })} */}
+       
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

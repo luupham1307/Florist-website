@@ -2,19 +2,13 @@ import React, { useState } from "react";
 import ServiceContent from "./ServiceContent";
 import Quote from "./Quote";
 
-export default function ServicesDetail({
-  onShowVideo,
-  arrSer,
-  onShowSerDetail,
-  showSerDetail,
-  number
-}) {
+export default function ServicesDetail({ onShowVideo}) {
   return (
     <div className="lg:basis-4/6 lg:pl-[60px]">
       <div>
         {/* Service video */}
 
-        <div className="relative" onClick={onShowSerDetail}>
+        <div className="relative">
           <img
             className="h-[432px] w-full object-cover object-center "
             src="https://zjuxinjcqrcvncurfkwx.supabase.co/storage/v1/object/public/Image/Product/product-16.jpg"
@@ -29,12 +23,12 @@ export default function ServicesDetail({
           </a>
 
           <h2 className="absolute bottom-0 left-0 translate-y-[50%] bg-white text-[50px] font-normal pt-[10px] pr-[25px] mb-[18px] ">
-            {arrSer[number].heading}
+            a
           </h2>
         </div>
 
         <p className="font-[Quicksand] text-[#f45d96] font-bold mt-[30px] mb-9 ">
-          {arrSer[number].price}
+          aa
         </p>
 
         {/* Content */}
@@ -59,7 +53,7 @@ export default function ServicesDetail({
           perennials and ornamental grasses to supply her studio.`}
         />
 
-        {showSerDetail && (
+        {/* {showSerDetail && (
           <ServiceContent
             text1={`For Heather Henson, of Boreal Blooms in Cold Lake, Alberta, Canada,
        growing flowers that can be dried and incorporated into late fall and
@@ -75,9 +69,9 @@ export default function ServicesDetail({
             textList4={`Referral Program. Red White & Bloom will offer a one-time 25%
          discount to each commercial customer for every additional.`}
           />
-        )}
+        )} */}
 
-        {showSerDetail && (
+        {/* {showSerDetail && (
           <ServiceContent
             text1={`For Heather Henson, of Boreal Blooms in Cold Lake, Alberta, Canada,
          growing flowers that can be dried and incorporated into late fall and
@@ -94,7 +88,7 @@ export default function ServicesDetail({
            season, this farmer-florist relies on a vivid palette of annuals,
            perennials and ornamental grasses to supply her studio.`}
           />
-        )}
+        )} */}
 
         {/* Input box */}
         <Quote />

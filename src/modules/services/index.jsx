@@ -5,7 +5,7 @@ import Services from "./pages/Services";
 export default function ServicesNav() {
   return (
     <React.Fragment>
-      <Slice />
+      <Slice pageHeader={"Our Service"} pageName={"Service"} />
       <Services />
     </React.Fragment>
   );
