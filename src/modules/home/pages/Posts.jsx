@@ -26,7 +26,7 @@ export default function Posts() {
           <div className="md:flex md:justify-between">
             {/* Posts heading */}
             <div className="pb-[45px] md:pl-[15px]">
-              <span className="font-[Quicksand] text-[#f45d96] text-base font-bold uppercase tracking-[4px] mb-2 ">
+              <span className=" block font-[Quicksand] text-[#f45d96] text-base font-bold uppercase tracking-[4px] mb-2 ">
                 Latest posts
               </span>
               <h2 className="font-[Libre Baskerville] text-[42px] leading-[58px] text-[#111111] font-normal ">
@@ -34,7 +34,7 @@ export default function Posts() {
               </h2>
             </div>
             {/* Posts button */}
-            <div>
+            <div className="mb-[30px] sm:mb-[30px] md:mt-[20px] ">
               <Link to="/blog" className="font-[Quicksand] border-solid border-[#f45d96] border-[2px] rounded-full px-[30px] py-3 mb-[45px] text-[15px]  text-[#111111] font-bold tracking-[2px] uppercase md:justify-end ">
                 View all posts
               </Link>

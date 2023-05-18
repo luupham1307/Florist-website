@@ -20,15 +20,21 @@ export default function CallToAction() {
                 <span className="font-[Quicksand] mb-5 text-white text-left text-base font-bold tracking-[4px] uppercase ">
                   Custom Flower
                 </span>
-                <h2 className="text-[42px] text-[#ffffff] mb-[42px] ">
+                <h2 className="text-[42px] text-[#ffffff] mb-[30px]  sm:mb-[42px] ">
                   Let out flowers make your party more perfect
                 </h2>
-                <Link to="/shop" className="font-[Quicksand] bg-[#f45d96] text-[#ffffff] text-sm leading-5 tracking-[2px] font-bold px-[30px] py-[14px] uppercase rounded-full ">
-                  Order now
-                </Link>
-                <Link to="/contact/contact" className="font-[Quicksand] bg-[#ffffff] text-[#f45d96] text-sm leading-5 tracking-[2px] font-bold px-[30px] py-[14px] ml-4 uppercase rounded-full ">
-                  Contact Us
-                </Link>
+                <div className="sm:flex">
+                  <div className="mb-8">
+                    <Link to="/shop" className="font-[Quicksand] bg-[#f45d96] text-[#ffffff] text-sm leading-5 tracking-[2px] font-bold px-[30px] py-[14px] uppercase rounded-full ">
+                      Order now
+                    </Link>
+                  </div>
+                  <div>
+                    <Link to="/contact/contact" className="font-[Quicksand] bg-[#ffffff] text-[#f45d96] text-sm leading-5 tracking-[2px] font-bold px-[30px] py-[14px] sm:ml-4 uppercase rounded-full ">
+                      Contact Us
+                    </Link>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
