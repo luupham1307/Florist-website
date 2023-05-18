@@ -38,7 +38,7 @@ export default function ProductItem({ productItem }) {
         </ul>
       </div>
       <div className="text-center text-[#111111] mb-10  md:mb-[50px]">
-        <Link to="/shopdetai">
+        <Link to="/shopdetail">
           <h5 className="font-['Libre_Baskerville'] text-lg font-normal capitalize pt-6 mb-2 cursor-pointer">
             {productItem.name}
           </h5>
