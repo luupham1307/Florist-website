@@ -39,7 +39,7 @@ export default function Shop() {
         <Container>
           <div className="flex flex-wrap mx-[18px]">
             {product.map((productItem, index) => {
-              <ProductItem key={index} productItem={productItem} />;
+              return <ProductItem key={index} productItem={productItem} />; 
             })}
           </div>
         </Container>
