@@ -5,7 +5,7 @@ import Contact from "./pages/Contact";
 export default function ContactNav() {
   return (
     <React.Fragment>
-      <Slice pageHeader={"Contact"} pageName={"contact"} />
+      <Slice pageHeader={"Contact us"} pageName={"contact"} />
       <Contact />
     </React.Fragment>
   );
