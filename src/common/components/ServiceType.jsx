@@ -1,11 +1,12 @@
 import React from "react";
 
 export default function ServiceType({ onShowSerDetail, arrSer }) {
+
   return (
     <div className="lg:basis-2/6 lg:pt-[35px] lg:pr-[15px] ">
       {arrSer.map((item, index) => {
-        return (
 
+        return (
           <a
             className="block relative mb-[75px] px-2.5 lg:px-10 xl:px-[75px] pb-[30px] xl:pb-[35px] pt-[60px] text-center border-solid border-[0.5px] border-[#f45d96] border-opacity-20  active:border-[#f45d96]"
             href=""
