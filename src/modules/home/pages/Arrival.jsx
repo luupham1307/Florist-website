@@ -64,12 +64,15 @@ export default function Arrival() {
       <div className="w-full px-[15px] md:px-0 mx-auto">
         <Container>
           <div className="flex flex-wrap mx-[18px]">
-            {product && product.map((productItem, index) => {
+            {product.map((productItem, index) => {
               if (index <= 9) {
-                <ProductItem
+                return (
+                  <ProductItem
                   key={index}
                   productItem={productItem}
-                />;
+                />
+                )
+              
               }
             })}
           </div>
