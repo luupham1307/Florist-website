@@ -210,7 +210,7 @@ export default function CartDetails() {
                                 </li>
                             </ul>
                             <Link
-                                to="/cartDetails/checkout"
+                                to="/checkout"
                                 className="block h-[46px] text-center w-full text-white bg-black  uppercase  font-['Quicksand'] tracking-[2px] lg:tracking-normal test-base font-bold   px-[20px] py-[14px] "
                             >
                                 PROCEED TO CHECKOUT
@@ -219,6 +219,6 @@ export default function CartDetails() {
                     </div>
                 </div>
             </div>
-        </Container >
+        </Container>
     );
 }

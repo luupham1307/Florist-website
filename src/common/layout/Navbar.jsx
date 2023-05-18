@@ -36,15 +36,15 @@ export default function Navbar() {
                         {/* icon */}
                         <div className="hidden lg:flex lg:gap-12 text-[#f45d96] text-[20px] ">
 
-                            <a href="">
+                            <Link to="/shop" >
                                 <i className="fa-solid fa-magnifying-glass"></i>
-                            </a>
+                            </Link>
 
                             <a href="">
                                 <i className="fa-sharp fa-solid fa-heart"></i>
                             </a>
                             {/* giỏ hàng */}
-                            <Link to="/CartDetails">
+                            <Link to="/cartDetails">
                                 <i className="fa-sharp fa-solid fa-cart-shopping"></i>
                             </Link>
                         </div>
@@ -69,15 +69,15 @@ export default function Navbar() {
 
                                         <div className="mb-[20px] text-[20px] flex justify-between  ">
                                             <div className="flex justify-between basis-1/2  text-[#f45d96]">
-                                                <a href="">
+                                                <Link to="/shop" >
                                                     <i className="fa-solid fa-magnifying-glass"></i>
-                                                </a>
+                                                </Link>
 
                                                 <a href="">
                                                     <i className="fa-sharp fa-solid fa-heart "></i>
                                                 </a>
 
-                                                <Link to="/CartDetails">
+                                                <Link to="/cartDetails">
                                                     <i className="fa-sharp fa-solid fa-cart-shopping"></i>
                                                 </Link>
 

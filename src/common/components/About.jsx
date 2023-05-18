@@ -55,7 +55,7 @@ export default function About({ isAutoPlay }) {
                             </h2>
                             <p className="text-lg  font-[Quicksand] mb-[30px]">This awareness has been stimulated by sustainable sourcing practices and the desire on the
                                 part of North American flower growers to “extend the season” beyond the last frost.</p>
-                            <Link to="/contact/" className="font-[Quicksand] bg-[#f45d96] text-[#ffffff] text-sm leading-5 tracking-[2px] font-bold px-[30px] py-[14px] uppercase rounded-full ">
+                            <Link to="/contact" className="font-[Quicksand] bg-[#f45d96] text-[#ffffff] text-sm leading-5 tracking-[2px] font-bold px-[30px] py-[14px] uppercase rounded-full ">
                                 contact us
                             </Link>
                         </div>

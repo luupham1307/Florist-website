@@ -24,12 +24,12 @@ import ShopNav from "./modules/shop";
 import ContactNav from "./modules/Contact";
 
 import Checkout from "./modules/cart/Checkout";
-import BlogDetail from "./modules/cart/BlogDetail";
 import ShopDetail from "./modules/cart/ShopDetail";
 import Shop from "./modules/shop/pages/Shop";
 import Blog from "./modules/blog/pages/Blog";
 import CartDetails from "./modules/cart/CartDetails";
 import Contact from "./modules/Contact/pages/Contact";
+import BlogDetail from "./modules/cart/BlogDetail";
 
 const queryClient = new QueryClient();
 
@@ -42,13 +42,12 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/about" element={<AboutNav />} />
           <Route path="/services" element={<ServicesNav />} />
           <Route path="/shop" element={<ShopNav />} />
-          <Route path="/cart/shopdetail" element={<ShopDetail />} />
+          <Route path="/shopdetail" element={<ShopDetail />} />
           <Route path="/blog" element={<BlogNav />} />
-          <Route path="/cart/blogdetail" element={<BlogDetail />} />
+          <Route path="/blogdetail" element={<BlogDetail />} />
           <Route path="/contact" element={<ContactNav />} />
-          <Route path="/contact/contact" element={<Contact />} />
-          <Route path="/CartDetails" element={<CartDetails />} />
-          <Route path="/cartdetails/checkout" element={<Checkout />} />
+          <Route path="/cartDetails" element={<CartDetails />} />
+          <Route path="/checkout" element={<Checkout />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/blog" element={<Blog />} />
 
