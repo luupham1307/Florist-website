@@ -21,7 +21,7 @@ import AboutNav from "./modules/about";
 import ServicesNav from "./modules/services";
 import BlogNav from "./modules/blog";
 import ShopNav from "./modules/shop";
-import ContactNav from "./modules/contact";
+import ContactNav from "./modules/Contact";
 
 import Checkout from "./modules/cart/Checkout";
 import BlogDetail from "./modules/cart/BlogDetail";
