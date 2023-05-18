@@ -1,7 +1,6 @@
-import { func } from "prop-types";
 import React, { useState } from "react";
 
-export default function BlogItem({ blogItem, index }) {
+export default function BlogItem({blogItem, index }) {
   return (
     <div key={index} className="group mb-[50px] md:basis-1/2 lg:basis-1/3">
       {/* shadow */}
@@ -16,7 +15,7 @@ export default function BlogItem({ blogItem, index }) {
         </div>
 
         {/* blog content */}
-        <div className="relative px-[35px] pt-[38px] pb-[30px] bg-white  text-center">
+        <div className="relative h-[300px] px-[35px] pt-[38px] pb-[30px] bg-white text-center">
           <span
             className={`absolute inline-block font-[Quicksand] top-0 left-1/2 -translate-x-[50%] -translate-y-[50%] text-[14px] text-white font-bold uppercase bg-black group-hover:bg-[#f45d96] px-3 pt-1 pb-[2px]`}
           >
