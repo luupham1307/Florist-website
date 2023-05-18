@@ -14,7 +14,7 @@ export default function Categories() {
                 setIsLoading(false);
             }).catch(() => {
                 setIsLoading(false);
-                setError("Lỗi gì đó")
+                setError("error")
             })
         }
     }, [categories])

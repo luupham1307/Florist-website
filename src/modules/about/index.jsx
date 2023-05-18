@@ -10,7 +10,7 @@ export default function AboutNav() {
   return (
     <React.Fragment>
       <Slice pageHeader={"About Us"} pageName={"About"} />
-      <About />
+      <About isAutoPlay />
       <Out_Services />
       <Testimonial />
       <MyTeam />

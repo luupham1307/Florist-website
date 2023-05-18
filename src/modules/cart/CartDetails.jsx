@@ -2,21 +2,62 @@ import React, { useState } from "react";
 import { isNumeric } from "../../common/helpers";
 import { Link } from "react-router-dom";
 import Container from "../../common/components/Container";
+const listProducts = [{
+    id: 1,
+    imgUrl: "https://preview.colorlib.com/theme/florist/img/cart/cat-1.jpg.webp",
+    name: "Cactus",
+    price: 19,
+    total: 1
+},
+{
+    id: 2,
+    imgUrl: "https://preview.colorlib.com/theme/florist/img/cart/cat-2.jpg.webp",
+    name: " Succulent plants",
+    price: 21,
+    total: 1
+}, {
+    id: 3,
+    imgUrl: "https://zjuxinjcqrcvncurfkwx.supabase.co/storage/v1/object/public/Image/Product/product-18.jpg",
+    name: "Funiture tree",
+    price: 10,
+    total: 1
+},
+{
+    id: 4,
+    imgUrl: "https://zjuxinjcqrcvncurfkwx.supabase.co/storage/v1/object/public/Image/Product/product-22.jpg",
+    name: "Cactus",
+    price: 15,
+    total: 1
+}
+]
 
 export default function CartDetails() {
     // khai báo biến có trang thái mới là count
-    const [count, setCount] = useState(1);
-    const [deleteProduct, setDeleteProduct] = useState(false);
-    const onChange = (e) => {
-        if (isNumeric(e.target.value)) setCount(e.target.value);
+    const [productCart, setProductCart] = useState(listProducts)
+    const onChange = (product) => (e) => {
+        if (isNumeric(e.target.value)) {
+            setProductCart(productCart.map(item => {
+                if (item.id === product.id) {
+                    return { ...item, total: e.target.value }
+                } return item;
+            }))
+        }
     };
-    const decrease = () => {
-        if (count === 1) return;
-        setCount(count - 1);
+    const decrease = (product) => () => {
+        if (product.total === 0) return;
+        setProductCart(productCart.map(item => {
+            if (item.id === product.id) {
+                return { ...item, total: item.total - 1 }
+            } return item;
+        }))
     };
 
-    const increase = () => {
-        setCount(count + 1);
+    const increase = (product) => () => {
+        setProductCart(productCart.map(item => {
+            if (item.id === product.id) {
+                return { ...item, total: item.total + 1 }
+            } return item;
+        }))
     };
 
 
@@ -44,194 +85,57 @@ export default function CartDetails() {
                             </thead>
 
                             <tbody className="bg-white divide-y divide-gray-200 ">
-                                <tr hidden={deleteProduct}>
-                                    <td className="py-[35px] lg:flex">
-                                        <div className="mr-[30px]">
-                                            <img
-                                                src="https://preview.colorlib.com/theme/florist/img/cart/cat-1.jpg.webp"
-                                                alt=""
-                                            />
-                                        </div>
-                                        <div className="pt-[20px]">
-                                            <h4 className=" text-h4 font-normal font-['Libre_Baskerville'] mb-[10px]">
-                                                Cactus
-                                            </h4>
-                                            <span className="text-[20px] font-bold font-['Quicksand']">
-                                                $19.00
-                                            </span>
-                                        </div>
-                                    </td>
-                                    <td className="py-[35px]  text-center ">
-                                        <div className="">
-                                            <button
-                                                className="text-xl font-normal"
-                                                onClick={decrease}
-                                            >
-                                                -
-                                            </button>
-                                            <input
-                                                className="w-[80px] text-center text-[20px] font-bold font-['Quicksand']"
-                                                type="text"
-                                                onChange={onChange}
-                                                value={count}
-                                            />
-                                            <button className="text-xl" onClick={increase}>
-                                                +
-                                            </button>
-                                        </div>
-                                    </td>
-                                    <td className="py-[35px] text-[20px] font-bold font-['Quicksand']">
-                                        ${count * 19}.00
-                                    </td>
-                                    <td className="py-[35px]">
+                                {productCart.map(item => (
+                                    <tr key={item.id} >
+                                        <td className="py-[35px] lg:flex">
+                                            <div className="mr-[30px]">
+                                                <img
+                                                    width="100px"
+                                                    height="100px"
+                                                    src={item.imgUrl}
+                                                    alt=""
+                                                />
+                                            </div>
+                                            <div className="pt-[20px]">
+                                                <h4 className=" text-h4 font-normal font-['Libre_Baskerville'] mb-[10px]">
+                                                    {item.name}
+                                                </h4>
+                                                <span className="text-[20px] font-bold font-['Quicksand']">
+                                                    ${item.price}.00
+                                                </span>
+                                            </div>
+                                        </td>
+                                        <td className="py-[35px]  text-center ">
+                                            <div className="">
+                                                <button
+                                                    className="text-xl font-normal"
+                                                    onClick={decrease(item)}
+                                                >
+                                                    -
+                                                </button>
+                                                <input
+                                                    className="w-[80px] text-center text-[20px] font-bold font-['Quicksand']"
+                                                    type="text"
+                                                    onChange={onChange(item)}
+                                                    value={item.total}
+                                                />
+                                                <button className="text-xl" onClick={increase(item)}>
+                                                    +
+                                                </button>
+                                            </div>
+                                        </td>
+                                        <td className="py-[35px] text-[20px] font-bold font-['Quicksand']">
+                                            ${item.total * item.price}.00
+                                        </td>
+                                        <td className="py-[35px]">
 
-                                        <i
-                                            className="cursor-pointer fa fa-times-circle text-[#f45d96] text-[20px]"
-                                            onClick={() => setDeleteProduct(true)}
-                                        ></i>
-                                    </td>
-                                </tr>
-
-                                <tr hidden={deleteProduct}>
-                                    <td className="py-[35px] lg:flex">
-                                        <div className="mr-[30px]">
-                                            <img
-                                                src="https://preview.colorlib.com/theme/florist/img/cart/cat-2.jpg.webp"
-                                                alt=""
-                                            />
-                                        </div>
-                                        <div className="pt-[20px]">
-                                            <h4 className=" text-h4 font-normal font-['Libre_Baskerville'] mb-[10px]">
-                                                Succulent plants
-                                            </h4>
-                                            <span className="text-[20px] font-bold font-['Quicksand']">
-                                                $21.00
-                                            </span>
-                                        </div>
-                                    </td>
-                                    <td className="py-[35px]  text-center ">
-                                        <div className="">
-                                            <button
-                                                className="text-xl font-normal"
-                                                onClick={decrease}
-                                            >
-                                                -
-                                            </button>
-                                            <input
-                                                className="w-[80px] text-center text-[20px] font-bold font-['Quicksand']"
-                                                type="text"
-                                                onChange={onChange}
-                                                value={count}
-                                            />
-                                            <button className="text-xl" onClick={increase}>
-                                                +
-                                            </button>
-                                        </div>
-                                    </td>
-                                    <td className="py-[35px] text-[20px] font-bold font-['Quicksand']">
-                                        ${count * 21}.00
-                                    </td>
-                                    <td className="py-[35px]">
-                                        <i
-                                            className="cursor-pointer fa fa-times-circle text-[#f45d96] text-[20px]"
-                                            onClick={() => setDeleteProduct(true)}
-                                        ></i>
-                                    </td>
-                                </tr>
-
-                                <tr hidden={deleteProduct}>
-                                    <td className="py-[35px] lg:flex">
-                                        <div className="mr-[30px]">
-                                            <img className="w-[100px] h-[100px]"
-                                                src="https://zjuxinjcqrcvncurfkwx.supabase.co/storage/v1/object/public/Image/Product/product-18.jpg"
-                                                alt=""
-                                            />
-                                        </div>
-                                        <div className="pt-[20px]">
-                                            <h4 className=" text-h4 font-normal font-['Libre_Baskerville'] mb-[10px]">
-                                                Funiture tree
-                                            </h4>
-                                            <span className="text-[20px] font-bold font-['Quicksand']">
-                                                $27.00
-                                            </span>
-                                        </div>
-                                    </td>
-                                    <td className="py-[35px]  text-center ">
-                                        <div className="">
-                                            <button
-                                                className="text-xl font-normal"
-                                                onClick={decrease}
-                                            >
-                                                -
-                                            </button>
-                                            <input
-                                                className="w-[80px] text-center text-[20px] font-bold font-['Quicksand']"
-                                                type="text"
-                                                onChange={onChange}
-                                                value={count}
-                                            />
-                                            <button className="text-xl" onClick={increase}>
-                                                +
-                                            </button>
-                                        </div>
-                                    </td>
-                                    <td className="py-[35px] text-[20px] font-bold font-['Quicksand']">
-                                        ${count * 27}.00
-                                    </td>
-                                    <td className="py-[35px]">
-                                        <i
-                                            className="cursor-pointer fa fa-times-circle text-[#f45d96] text-[20px]"
-                                            onClick={() => setDeleteProduct(true)}
-                                        ></i>
-                                    </td>
-                                </tr>
-
-                                <tr hidden={deleteProduct}>
-                                    <td className="py-[35px] lg:flex">
-                                        <div className="mr-[30px]">
-                                            <img className="w-[100px] h-[100px]"
-                                                src="https://zjuxinjcqrcvncurfkwx.supabase.co/storage/v1/object/public/Image/Product/product-22.jpg"
-                                                alt=""
-                                            />
-                                        </div>
-                                        <div className="pt-[20px]">
-                                            <h4 className=" text-h4 font-normal font-['Libre_Baskerville'] mb-[10px]">
-                                                Fresh Flower
-                                            </h4>
-                                            <span className="text-[20px] font-bold font-['Quicksand']">
-                                                $25.00
-                                            </span>
-                                        </div>
-                                    </td>
-                                    <td className="py-[35px]  text-center ">
-                                        <div className="">
-                                            <button
-                                                className="text-xl font-normal"
-                                                onClick={decrease}
-                                            >
-                                                -
-                                            </button>
-                                            <input
-                                                className="w-[80px] text-center text-[20px] font-bold font-['Quicksand']"
-                                                type="text"
-                                                onChange={onChange}
-                                                value={count}
-                                            />
-                                            <button className="text-xl" onClick={increase}>
-                                                +
-                                            </button>
-                                        </div>
-                                    </td>
-                                    <td className="py-[35px] text-[20px] font-bold font-['Quicksand']">
-                                        ${count * 25}.00
-                                    </td>
-                                    <td className="py-[35px]">
-                                        <i
-                                            className="cursor-pointer fa fa-times-circle text-[#f45d96] text-[20px]"
-                                            onClick={() => setDeleteProduct(true)}
-                                        ></i>
-                                    </td>
-                                </tr>
+                                            <i
+                                                className="cursor-pointer fa fa-times-circle text-[#f45d96] text-[20px]"
+                                                onClick={() => setProductCart(productCart.filter(i => i.id !== item.id))}
+                                            ></i>
+                                        </td>
+                                    </tr>
+                                ))}
                             </tbody>
                         </table>
 
@@ -246,13 +150,13 @@ export default function CartDetails() {
 
                             <div className="flex lg:max-basis-7/12 justify-between ">
                                 <div className="sm:mr-[65px] lg:mr-[15px]  ">
-                                    <a href="#">
-                                        <i className="fa-solid fa-trash-can text-[#f45d96] pr-[5px]" onClick={() => setDeleteProduct(true)}></i>
+                                    <a onClick={() => setProductCart([])} href="#">
+                                        <i className="fa-solid fa-trash-can text-[#f45d96] pr-[5px]"></i>
                                         <span> Clear shopping cart</span>
                                     </a>
                                 </div>
                                 <div>
-                                    <a href="#">
+                                    <a onClick={() => setProductCart(listProducts)} href="#">
                                         <i className="fa-solid fa-spinner text-[#f45d96] pr-[5px]"></i>
                                         <span> Update cart</span>
                                     </a>
@@ -294,14 +198,14 @@ export default function CartDetails() {
                                 <li className="text-[#888888] text-base leading-[36px]">
                                     Subtotal
                                     <span className="text-black font-bold float-right">
-                                        $217.00
+                                        ${productCart.reduce((pre, cur) => ((cur.total * cur.price) + pre), 0)}.00$
                                     </span>
                                 </li>
 
                                 <li className="text-[#888888] text-base">
                                     Subtotal
                                     <span className="text-[#f45d96] font-bold float-right">
-                                        $217.00
+                                        ${productCart.reduce((pre, cur) => ((cur.total * cur.price) + pre), 0)}.00$
                                     </span>
                                 </li>
                             </ul>
@@ -315,6 +219,6 @@ export default function CartDetails() {
                     </div>
                 </div>
             </div>
-        </Container>
+        </Container >
     );
 }
