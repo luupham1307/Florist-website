@@ -27,6 +27,8 @@ import CartDetails from "./modules/cart/CartDetails";
 import Checkout from "./modules/cart/Checkout";
 import BlogDetail from "./modules/cart/BlogDetail";
 import ShopDetail from "./modules/cart/ShopDetail";
+import Shop from "./modules/shop/pages/Shop";
+import Blog from "./modules/blog/pages/Blog";
 
 const queryClient = new QueryClient();
 
@@ -43,8 +45,12 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/blog" element={<BlogNav />} />
           <Route path="/cart/blogdetail" element={<BlogDetail />} />
           <Route path="/contact" element={<ContactNav />} />
+          <Route path="/contact/contact" element={<Contact />} />
           <Route path="cart/cartdetails" element={<CartDetails />} />
           <Route path="/cartdetails/checkout" element={<Checkout />} />
+          <Route path="/shop" element={<Shop />} />
+          <Route path="/blog" element={<Blog />} />
+          rou
         </Routes>
       </Layout>
     </BrowserRouter>

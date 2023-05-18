@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper";
 import Container from "../../../common/components/Container";
 import ContainerFuild from "../../../common/components/ContainerFuild";
+import { Link } from "react-router-dom";
 
 
 const bannerOptions = [
@@ -45,9 +46,9 @@ export default function Slide() {
                                         <h2 className=" text-[42px] text-black mb-[28px] ">
                                             Making beautiful flowers a part of your life.
                                         </h2>
-                                        <button className="font-[Quicksand] bg-[#f45d96] text-[#ffffff] text-[15px] tracking-[2px] font-bold px-[30px] py-[14px] uppercase rounded-full ">
+                                        <Link to="/shop" className="font-[Quicksand] bg-[#f45d96] text-[#ffffff] text-[15px] tracking-[2px] font-bold px-[30px] py-[14px] uppercase rounded-full ">
                                             Shop now
-                                        </button>
+                                        </Link>
                                     </div>
                                 </div>
 

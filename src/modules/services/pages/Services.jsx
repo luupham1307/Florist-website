@@ -67,7 +67,7 @@ export default function Services() {
       {/* modal video */}
       {showVideo && (
         <div>
-          <Overlay />
+          <Overlay onhandleclose={hanldeShowVideoModal} />
           <div className=" z-50 fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[900px] h-[500px] p-4 rounded-lg bg-white ">
             <iframe
               className="rounded-md"
