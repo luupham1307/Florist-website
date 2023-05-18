@@ -23,12 +23,12 @@ export default function ServicesDetail({ onShowVideo}) {
           </a>
 
           <h2 className="absolute bottom-0 left-0 translate-y-[50%] bg-white text-[50px] font-normal pt-[10px] pr-[25px] mb-[18px] ">
-            a
+            Custom order
           </h2>
         </div>
 
         <p className="font-[Quicksand] text-[#f45d96] font-bold mt-[30px] mb-9 ">
-          aa
+          From $60 - $300
         </p>
 
         {/* Content */}
