@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 export default function NavbarLink() {
     return (
         <div>
-            <ul className="flex md:flex-col lg:flex-row gap-4 font-medium  xl:space-x-8  text-base uppercase ">
+            <ul className="flex flex-col lg:flex-row gap-4 font-medium  xl:space-x-8  text-base uppercase ">
                 <li>
                     <Link to="/" className="block py-2 pl-3 pr-4 text-black md:bg-transparent md:hover:text-[#f45d96]  md:p-0 " aria-current="page">Home</Link>
                 </li>

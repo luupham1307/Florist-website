@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Container from "./Container";
 
-
+// met
 
 export default function About() {
     return (
@@ -20,16 +20,28 @@ export default function About() {
                     </div>
                 </div>
 
+                {/* img +video */}
                 <div className=" lg:flex lg:flex-row lg:relative ">
                     <div className="relative lg:basis-1/2" >
-                        <img className=" h-[535px] sm:w-full md:w-[690px] lg:w-full xl:w-[753px] 2xl:w-[793px] object-cover mb-[30px] " src="https://zjuxinjcqrcvncurfkwx.supabase.co/storage/v1/object/public/Image/About/about-video.jpg" alt=" about" />
+                        {/* <img className=" h-[535px] sm:w-full md:w-[690px] lg:w-full xl:w-[753px] 2xl:w-[793px] object-cover mb-[30px] " src="https://zjuxinjcqrcvncurfkwx.supabase.co/storage/v1/object/public/Image/About/about-video.jpg" alt=" about"
 
-                        <div className=" absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  text-[50px] text-[#f45d96] rounded-full bg-white w-[80px] h-[80px] flex items-center justify-center">
-                            <a href="https://zjuxinjcqrcvncurfkwx.supabase.co/storage/v1/object/public/Image/video/Download.mp4">
-                                <i className="fa-solid fa-caret-right"></i>
-                            </a>
 
-                        </div>
+
+                        /> */}
+
+                        <video
+                            className=" h-[535px] w-full md:w-[690px] lg:w-full xl:w-[753px] 2xl:w-[793px] object-cover mb-[30px]"
+                            controls autoPlay
+
+                        >
+                            <source
+                                src="https://zjuxinjcqrcvncurfkwx.supabase.co/storage/v1/object/public/Image/video/Download.mp4"
+                                type="video/mp4"
+                            />
+                            Your browser does not support the video tag.
+                        </video>
+
+
 
                     </div>
 

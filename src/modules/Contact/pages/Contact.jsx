@@ -45,7 +45,7 @@ export default function Contact() {
                   fontSize={`text-[40px]`}
                 />
 
-                <form className="font-[Quicksand] text-base" action="">
+                <form className="font-[Quicksand] text-base " action="">
                   <input
                     className="w-full h-12 mb-6 pl-4 py-0.5 pr-0.5 border-solid border-[1px] border-[#e1e1e1] text-[#888888]"
                     type="text"
