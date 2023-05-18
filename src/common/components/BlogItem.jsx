@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function BlogItem({blogItem, index }) {
   return (
@@ -21,11 +22,11 @@ export default function BlogItem({blogItem, index }) {
           >
             {blogItem.type}
           </span>
-          <a className="group-hover:underline" href="">
+          <Link to="/cart/blogdetail" className="group-hover:underline">
             <h4 className="font-[Libre Baskerville] text-h4 font-normal mb-3">
               {blogItem.title}
             </h4>
-          </a>
+          </Link>
 
           <p className="font-[Quicksand] text-sm text-[#111111] font-normal mb-[10px]">
             {blogItem.description}

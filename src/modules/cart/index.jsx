@@ -2,15 +2,17 @@ import React from "react";
 import Slice from "../../common/components/Slice";
 import CartDetails from "./CartDetails";
 import Checkout from "./Checkout";
-import ProductDetail from "../../common/components/Product/ProductDetail";
+import ShopDetail from "./ShopDetail";
+import BlogDetail from "./BlogDetail";
 
 export default function PagesNav() {
   return (
     <React.Fragment>
-      <Slice />,
+      <Slice pageHeader={"Shopping cart"} pageName={"Shopping cart"} />,
       <CartDetails />
       <Checkout />
-      {/* <ProductDetail /> */}
+      <ShopDetail />
+      <BlogDetail />
     </React.Fragment>
   );
 }

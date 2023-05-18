@@ -6,7 +6,6 @@ export default function ServiceType({ onShowSerDetail, arrSer }) {
       {arrSer.map((item, index) => {
         return (
           <a
-            onClick={onShowSerDetail}
             className="block relative mb-[75px] px-2.5 lg:px-10 xl:px-[75px] pb-[30px] xl:pb-[35px] pt-[60px] text-center border-solid border-[0.5px] border-[#f45d96] border-opacity-20  active:border-[#f45d96]"
             href=""
           >

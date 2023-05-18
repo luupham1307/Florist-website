@@ -25,6 +25,8 @@ import ShopNav from "./modules/shop";
 import ContactNav from "./modules/contact";
 import CartDetails from "./modules/cart/CartDetails";
 import Checkout from "./modules/cart/Checkout";
+import BlogDetail from "./modules/cart/BlogDetail";
+import ShopDetail from "./modules/cart/ShopDetail";
 
 const queryClient = new QueryClient();
 
@@ -37,13 +39,13 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/about" element={<AboutNav />} />
           <Route path="/services" element={<ServicesNav />} />
           <Route path="/shop" element={<ShopNav />} />
+          <Route path="/cart/shopdetail" element={<ShopDetail />} />
           <Route path="/blog" element={<BlogNav />} />
+          <Route path="/cart/blogdetail" element={<BlogDetail />} />
           <Route path="/contact" element={<ContactNav />} />
-          <Route path="/cartDetails" element={<CartDetails />} />
-          <Route path="/cartDetails/checkout" element={<Checkout />} />
-
+          <Route path="cart/cartdetails" element={<CartDetails />} />
+          <Route path="/cartdetails/checkout" element={<Checkout />} />
         </Routes>
-
       </Layout>
     </BrowserRouter>
   </QueryClientProvider>
